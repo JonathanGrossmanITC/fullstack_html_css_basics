@@ -1,0 +1,201 @@
+@keyframes change-background-color {
+  from {
+    background-color: black;
+  }
+  to {
+    background-color: white;
+  }
+}
+
+@keyframes change-font-color {
+  from {
+    color: yellow;
+  }
+  to {
+    color: #5876e9;
+  }
+}
+
+@keyframes change-flex-direction {
+  from {
+    flex-direction: row;
+  }
+  to {
+    flex-direction: column;
+  }
+}
+
+@keyframes float-to-top {
+  from {
+    top: 200px;
+  }
+  to {
+    top: 20px;
+  }
+}
+
+@keyframes change-background-and-font-color {
+  from {
+    background-color: black;
+    color: black;
+    cursor: none;
+  }
+  to {
+    background-color: white;
+    color: white;
+    cursor: none;
+  }
+}
+
+@keyframes change-background-and-width {
+  from {
+    background-color: #5876e9;
+    width: 20px;
+  }
+  to {
+    background-color: yellow;
+    width: 300px;
+  }
+}
+
+@keyframes change-color-and-size {
+  0% {
+    border-bottom: 1px solid #5876e9;
+    color: black;
+    transform: scale(1.4);
+  }
+  25% {
+    border-bottom: 3px solid #5876e9;
+    color: #5876e9;
+    transform: scale(1.6);
+  }
+  50% {
+    border-bottom: 5px solid #5876e9;
+    color: black;
+    transform: scale(1.8);
+  }
+  75% {
+    border-bottom: 3px solid #5876e9;
+    color: #5876e9;
+    transform: scale(1.6);
+  }
+  100% {
+    border-bottom: 1px solid #5876e9;
+    color: black;
+    transform: scale(1.4);
+  }
+}
+
+@keyframes show-and-shake {
+  0% {
+    transform: translate(5px, 5px);
+  }
+  10% {
+    transform: translateX(-5px);
+  }
+  20% {
+    transform: translateX(5px);
+  }
+  30% {
+    transform: translateX(-5px);
+  }
+  40% {
+    transform: translateX(5px);
+  }
+  50% {
+    transform: translateX(-2.5px);
+  }
+  60% {
+    transform: translateX(2.5px);
+  }
+  70% {
+    transform: translateX(-2.5px);
+  }
+  80% {
+    transform: translateX(2.5px);
+  }
+  90% {
+    transform: translateX(-2.5px);
+  }
+  100% {
+    transform: translateX(0px), translateY(-5px);
+  }
+}
+
+body {
+  animation: change-background-color 5s;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+h1 {
+  animation: float-to-top 3s, change-color-and-size 3s linear 6s;
+  border-bottom: 1px solid gray;
+  font-size: 28px;
+  padding: 10px;
+  position: absolute;
+  top: 20px;
+  transform: scale(1.4);
+}
+
+.button {
+  animation: change-background-and-font-color 5s, show-and-shake 1.5s ease-in 5s;
+  align-items: center;
+  background-color: #5876e9;
+  border-radius: 15px;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  height: 40px;
+  padding: 5px 15px;
+  position: absolute;
+  top: 300px;
+  transition: background-color 0.5s, border-radius 0.5s, outline 0s linear 0.5s;
+}
+
+.button:hover {
+  outline: 3px dashed #5876e9;
+  background-color: black;
+  border-radius: 5px;
+  font-weight: 900;
+  transform: scale(1.1);
+}
+
+.form-wrapper {
+  animation: change-flex-direction 12s;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  position: absolute;
+  top: 200px;
+  width: 80%;
+}
+
+.form-input {
+  animation: change-background-and-width 5s;
+  background-color: white;
+  border: 1px solid #5876e9;
+  border-radius: 5px;
+  outline: none;
+  margin: 10px;
+  padding: 5px 10px;
+  width: 300px;
+  transition: background-color 1s;
+}
+
+.form-input:hover {
+  background-color: gray;
+}
+
+.form-input:focus {
+  background-color: yellow;
+}
+
+.form-input::placeholder {
+  color: #5876e9;
+}

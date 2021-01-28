@@ -1,0 +1,12 @@
+.buttons-wrapper {
+  border: 1px solid black;
+  display: flex;
+  margin: 5px;
+}
+
+.button {
+  background-color: gray;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin: 5px;
+}

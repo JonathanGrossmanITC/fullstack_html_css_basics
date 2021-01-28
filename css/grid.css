@@ -1,0 +1,63 @@
+body {
+  font-family: "Courier New", Courier, monospace;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+}
+
+.box {
+  align-items: center;
+  color: darkorchid;
+  display: flex;
+  justify-content: center;
+  font-size: 24px;
+  padding: 10px;
+}
+
+.one {
+  border-radius: 100px;
+  background-color: rgb(237, 182, 248);
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.two {
+  border-top-left-radius: 100px;
+  border-bottom-left-radius: 100px;
+  background-color: rgb(175, 211, 252);
+  grid-column: 3 / 4;
+  grid-row: 1 / 3;
+}
+
+.three {
+  border-top-right-radius: 100px;
+  background-color: rgb(199, 250, 229);
+  grid-column: 1;
+  grid-row: 2 / 4;
+}
+
+.four {
+  border-top-left-radius: 100px;
+  border-bottom-left-radius: 100px;
+  background-color: rgb(176, 176, 255);
+  grid-column: 2 / 4;
+  grid-row: 3;
+}
+
+.five {
+  border-bottom-left-radius: 10px;
+  background-color: rgb(217, 217, 252);
+  grid-column: 1 / 3;
+  grid-row: 4;
+}
+
+.six {
+  border-bottom-right-radius: 10px;
+  background-color: rgb(255, 196, 196);
+  grid-column: 3;
+  grid-row: 4;
+}

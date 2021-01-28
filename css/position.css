@@ -1,0 +1,44 @@
+body {
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 700;
+}
+
+.parent {
+  border-radius: 10px;
+  color: aliceblue;
+
+  height: 200px;
+  margin: 5px;
+  text-align: center;
+  width: 80%;
+}
+
+.position-static {
+  background-color: black;
+}
+
+.position-relative {
+  background-color: gray;
+  position: relative;
+}
+
+.child-one {
+  background-color: #5876e9;
+  color: aliceblue;
+}
+
+.child-two {
+  background-color: #72fbd3;
+  color: #5876e9;
+}
+
+.position-absolute {
+  border-radius: 5px;
+  height: 50px;
+  padding: 10px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 200px;
+}
