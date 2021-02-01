@@ -240,7 +240,7 @@ In the example, you style the `h1` tag with the `.page-title` custom class you w
 
 As you can see from the example, the syntax for a _`.class`_  selector is a `.` followed by a name that you choose. When naming your own class, choose names that are unique, short, and descriptive. Good naming will make your code easier to maintain. Plus, good naming helps you tell a story with your code, which makes it easier to understand. When someone reads it, good names bring your code to life! Avoid using names that are the same as those for built-in functions and variables, other reservered names, and the same as other variables of yours.
 
-In CSS, your class names are for objects, not actions. Therefore, it's recommended to use nouns. For instance, `.spinner`, `success-alert`, and `page-title` are nouns that would help explain your code. Also, use `kebab-case` when your CSS class name has multiple words.
+In CSS, your class names are for objects, not actions. Therefore, it's recommended to use nouns. For instance, `.spinner`, `.success-alert`, and `.page-title` are nouns that would help explain your code. Also, use `kebab-case` when your CSS class name has multiple words.
 
 The _`.class`_ selector is just one of many options. You have [lots of CSS selectors](https://www.w3schools.com/cssref/css_selectors.asp) available to use. For instance, selectors exist for selecting elements with more than one class, elements of only a certain type with a specific class, elements with certain text in an attribute, and more. You also can use selectors to target parts of an element, like its active link, the status of whether it's checked or not, and the space before and after the element.
 
