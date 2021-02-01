@@ -6,7 +6,7 @@ When a user opens a browser on their computer, the browser requests from a serve
 
 Here in this lesson, first, you cover the very basics of HTML and CSS. Then, you dive into more intermediate topics like CSS selectors for custom styling HTML elements. 
 
-In this lesson, you also learn about flexbox, a powerful toolset for creating layouts for multiple HTML elements in either a row or column. In later chapters, you learn about using CSS to position individual elements (`position` and its cousins) and to position multiiple elements using Grid (columns *and* rows). In a later chapter, you learn a fourth layout option, too, which is using Bootstrap's layout system. 
+In this lesson, you also learn about flexbox, a powerful toolset for creating layouts for multiple HTML elements in either a row or column. In later chapters, you learn about using CSS to position individual elements (`position` and its cousins) and to position multiple elements using Grid (columns *and* rows). In a later chapter, you learn a fourth layout option, too, which is using Bootstrap's layout system. 
 
 Although this lesson assumes you already have some HTML, CSS, and JavaScript skills, it is not required that you do.
 
