@@ -340,7 +340,7 @@ In the modified example above, you added `align-items`, `height`, and `justify-c
 
 In addition to positioning *elements* inside a flexbox container, you can use the technique above to position *text* horizontally and/or vertically inside an element. For instance, you could turn the `.button` class into a flex container with `align-items` and `justify-content` set to `center`. Then, the text inside the `.button` will appear in the middle of the button.
 
-Centering is just one way you can position elements or text within a flex container. You also can align items at the start or end of the container. Plus, the parent container has many other flexbox options, like `flex-direction` and `flex-wrap`. Check out [this great flexbox guide](#https://css-tricks.com/snippets/css/a-guide-to-flexbox/).
+Centering is just one way you can position elements or text within a flex container. You also can align items at the start or end of the container. Plus, the parent container has many other flexbox options, like `flex-direction` and `flex-wrap`. Check out [this great flexbox guide](https://css-tricks.com/snippets/css/a-guide-to-flexbox/).
 
 A note on `flex-direction` -- it flips which axis is the main and which is the cross access. This results in `align-items` and `justify-content` controlling whichever axis it didn't control by default instead of its default axis. In the example above, adding `flex-direction: column` to the `div` results in `align-items` controlling horizontal orientation of the child elements and `justify-content` controlling the vertical (the opposite of the default on a `div`).
 
@@ -397,7 +397,7 @@ See that the pause button (i.e., the one with the `.button-pause` class) takes u
 
 Another common thing to do is set the child's `align-self` or `justify-self` properties to override the `align-items` or `justify-content` properties, respectively, as applied to that child. It essentially takes that child out of the normal flow. This is good, for example, if you want all elements centered in the flex container except for one of the elements. You can use`align-self` or `justify-self` on that child to position it.  
 
-There is a lot more you can do with child components CSS flex properties, like even set the order in which they align themselves. Again, check out [this great flexbox guide](#https://css-tricks.com/snippets/css/a-guide-to-flexbox/).
+There is a lot more you can do with child components CSS flex properties, like even set the order in which they align themselves. Again, check out [this great flexbox guide](https://css-tricks.com/snippets/css/a-guide-to-flexbox/).
 
 Other resources that might help are [MDN's flexbox basics](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox), [W3 Schools Flexbox](https://www.w3schools.com/css/css3_flexbox.asp), and [Flexbox Frogger](https://flexboxfroggy.com/).
 
