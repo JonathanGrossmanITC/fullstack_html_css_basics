@@ -109,17 +109,17 @@ All HTML tags have boundaries -- a beginning and an end. Many HTML tags declare 
 
 In the example above, you have opening and closing `div` tags with text between. The webpage will display the text but not the `div` tags. Rather, the browser uses the `div` tags to format and style the page _behind the scenes_.
 
-Although many elements require both opening and closing tags, some elements define their boundaries using a self-closing tag. A self-closing tag consists of only one tag, which both opens and closes the element. A self-closing tag starts with `<` and ends with `/>`, like this `<img />`. The content is declared as an attribute of the tag. Here is an example:
+Although many elements require both opening and closing tags, some elements define their boundaries using a self-closing tag. A self-closing tag consists of only one tag, which both opens and closes the element. A self-closing tag starts with `<` and ends with `/>`, like this `<img />`. The content is declared as an **attribute** of the tag. Here is an example:
 
 ```html
-<img src="image.jpg" />
+<img src="./images/image.jpg" />
 ```
 
-In the example above, you have a self-closing `img` tag that sets its source attribute (`src`) as `image.jpg`, which means it is showing `image.jpg` as its content on the webpage. In the browser, you will see the image but not the `img` tag. Instead, the `img` tag instructs the browser on how to display the image to the user.
+In the example above, you have a self-closing `img` tag that sets its source attribute (`src`) as `./images/image.jpg`, which means it is showing `image.jpg` as its content on the webpage. In the browser, you will see the image but not the `img` tag. Instead, the `img` tag tells the browser that this is an image.   
 
 ### Attributes
 
-As you can see from the `img` tag example, HTML tags can also have attributes. An attribute is a property of the tag. For instance, the `img` tag's `src` attribute declares which image to display. Another example is the tag used for making links -- the `a` tag. The `a` tag has an `href` attribute, which is what you need to set to tell the link where to go when clicked. Here is an example:
+As you can see from the `img` tag example, HTML tags can also have **attributes**. An attribute is a property of the tag. For instance, the `img` tag's `src` attribute declares which image to display. Another example is the tag used for making links -- the `a` tag. The `a` tag has an `href` attribute, which is what you need to set to tell the link where to go when clicked. Here is an example:
 
 ```html
 <a href="https://facebook.com">facebook</a>
@@ -127,7 +127,7 @@ As you can see from the `img` tag example, HTML tags can also have attributes. A
 
 In the example, the `a` tag's `href` attribute is set to `"https://facebook.com"`, which means that when the link is clicked, the browser will direct the user to `https://facebook.com`.
 
-Here is a [list of attributes and their corresponding tags](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes).
+Not every HTML tag has the same set of attributes. To help you know which tags have which attributes, here is a [list of attributes and their corresponding tags](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes).
 
 ### Default Style
 
