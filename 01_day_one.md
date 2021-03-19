@@ -19,11 +19,16 @@ By the end of this lesson, you will have:
 
 ## [HTML and CSS Refresher](#html-and-css-refresher)
 
-HTML and CSS are languages that instruct the browser how to display the contents on the page. HTML defines the elements of the page. The elements of the page consist of text, images, videos, content blocks, and more. HTML and CSS together define the style of the elements. The element styles include the size, spacing, color, font, and more.
+HTML and CSS are languages that instruct the browser how to display the contents on the page. HTML defines the **elements** of the page. The elements of the page consist of text, images, videos, content blocks, and more. HTML and CSS together define the **layout** and **style** of the elements. The layout is how the elements are organized on the page. The element styles include the size, spacing, color, font, and more.  
 
 ### A webpage is a document
+You're probably familiar with working in a Word Doc, Google Doc, Notepad, and .txt files. Similar to those, and HTML file is just a document for storing information. Try this. Make a file on your desktop called `document.html`. Open it and write the sentence "This is just a document". Save the file. Open a browser and drag your `document.html` file to the brower. What do you see in the browser?  
 
-Before going further, here is an example of a basic HTML document, which the browser reads from top to bottom:
+Pretty cool, but wouldn't it be better if you could add some style to the text? You could change its color, position, size, and more. Using HTML and CSS syntax, you can tell the browser how to do those things. That's one of the things that makes HTML and CSS so special is that browsers know how to interpret those kinds of files and display them to the user.  
+
+In this section, you'll learn about HTML tag syntax. This is a special syntax you need to use so that the browser knows what to do. Before studying the tag syntax, first, you'll see an example of how to structure an HTML page. In order to maximize the use of an HTML file, you need to know how to structure one. Then, you'll study some different tag types and how they work.   
+
+Before going further, here is an example of a basic HTML document structure, which the browser reads from top to bottom:
 
 ```html
 <!DOCTYPE html>
@@ -44,21 +49,21 @@ Before going further, here is an example of a basic HTML document, which the bro
 </html>
 ```
 
-The example above uses multiple HTML tags. At the top, the `<!DOCTYPE html>` tells the browser that this file is an HTML file. Next, the `html` tag is the main element that wraps all the other HTML tags. The `head` tag holds meta data about the page. Here, the meta data in the `head` tags sets the title that you see in the browser's tab at the top. Look for it in the image of the example below. Other meta data, however, is usually just for the browser to read, not for the user to see. An example is a link to a stylesheet, which you'll see below in the CSS section.
+The example above uses multiple HTML tags. At the top, the `<!DOCTYPE html>` tells the browser that this file is an HTML file. Next, the `html` tag is the main element that wraps all the other HTML tags. The `head` tag holds meta data about the page. Here, the meta data in the `head` tags sets the title that you see in the browser's tab at the top. Look for it in the image of the example below. Other meta data, however, is usually just for the browser to read, not for the user to see. An example is a link to a stylesheet, which you'll see below in the CSS section.  
 
-The `body` tag holds all the content for the page. It wraps all the page's content-holding elements and indicates to the browser that this is where the content is located.
+The `body` tag holds all the content for the page. It wraps all the page's content-holding elements and indicates to the browser that this is where the content is located.  
 
-Inside the body are the content-holding tags. In this example, the content is text. You see `h1`, `h2`, and `h4` tags, each of which come with different default font styling. You also see `p`, `div`, and `span` tags, each of which comes with its own default styling. More on this later. The bottom line is that inside the `body` tag is where you'll put the content that the user sees in the browser.
+Inside the body are the content-holding tags. In this example, the content is text. You see `h1`, `h2`, and `h4` tags, each of which come with different default font styling. You also see `p`, `div`, and `span` tags, each of which comes with its own default styling. More on this later. The bottom line is that inside the `body` element is where you'll put the content that the user sees in the browser.  
 
 To see this HTML in your own broswer, download this repository and drag to the browser the [hello html file](html/hello.html). It should look like this:
 
-![](images/hello_html_photo.png)
+![](images/hello_html_photo.png). 
 
-Finding [HTML examples](https://www.w3schools.com/html/html_examples.asp) online is a great way to help you write your own code.
+Finding [HTML examples](https://www.w3schools.com/html/html_examples.asp) online is a great way to help you write your own code.  
 
-As the example demonstrates, a website is really just a document. You can display the document either in the browser window or as the HTML source. When viewed in the browser, you see the page content organized and styled for the end user. When viewed as source code, you see all the HTML code. Regardless, it is the same document.
+As the example demonstrates, a website is really just a document. You can display the document either in the browser window or as the HTML source. When viewed in the browser, you see the page content organized and styled for the end user. When viewed as source code, you see all the HTML code. Regardless, it is the same document.  
 
-The webpage document relies upon other documents for content, style, and functionality. The HTML document relies upon CSS documents, images, and other files for conetent and style. It relies upon JavaScript files for functionality. 
+The webpage document relies upon other documents for content, style, and functionality. The HTML document relies upon CSS documents, images, and other files for conetent and style. It relies upon JavaScript files for functionality.  
 
 In your project folder, organize your files similar to the structure here in this repository.
 
