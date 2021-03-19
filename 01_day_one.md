@@ -14,7 +14,7 @@ By the end of this lesson, you will have:
 
 - A refresher on [HTML and CSS basics](#html-and-css-refresher)  
 - An intro to [CSS Selectors](#css-selectors)  
-- Mobile-first design using [media Queries](#media-queries)  
+- Mobile-first design using [media queries](#media-queries)  
 - Self-study resources for learning about pseudo elements
 
 ## [HTML and CSS Refresher](#html-and-css-refresher)
