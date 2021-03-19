@@ -149,13 +149,13 @@ When writing your own CSS, it is oftentimes best to use an **external stylesheet
 
 Other approaches for writing your own CSS exist too, like writing your CSS inside a `script` tag nested in the `head` tag. You also can write the CSS in the HTML tags themselves using the `style` attribute. You will see examples of these two approaches out in the wild. Regardless of whichever approach you use, it is a good practice to be consistent in your code. That way someone else (or the future you) doesn't have to look in too many places to find where the style properties are defined for a specific element. That becomes hard if styles are not located in predictable places. So, try not to mix different patterns for styling your app.
 
-Here, you will see an example using a `.css` file and an example using the `style` attribute. Remember, however that the external `.css` approach is best.  
+Here, you will see an example using an external `.css` file and an example using the `style` attribute. Remember, however that the external `.css` approach is best.  
 
-When using a CSS framework, you will import the framework into your HTML file and then use the framework's documentation to know the proper syntax for how to style your elements. You will have an introduction to the Bootstrap CSS framework in another chapter.
+When using a CSS framework, you will import the framework into your HTML file and then use the framework's documentation to know the proper syntax for how to style your elements. You will have an introduction to the Bootstrap CSS framework in another lesson.  
 
-### CSS File
+### CSS File  
 
-When writing your own CSS in a file, you first should create in your project's root folder a subfolder names `css`. Inside that subfolder, create a stylesheet file, which is a file ending in `.css`. Typically, for your main HTML page, you should name the stylesheet `styles.css`.
+When writing your own CSS in an external file, you first should create in your project's root folder a subfolder names `css`. Inside that subfolder, create a stylesheet file, which is a file ending in `.css`. Typically, for your main HTML page, you should name the stylesheet `styles.css` because that's the convention. However, you can name it whatever you want.
 
 Inside your HTML file, you need to import the stylesheet. Do this in the `head` tag using a `link` tag.
 
@@ -165,15 +165,15 @@ Inside your HTML file, you need to import the stylesheet. Do this in the `head` 
 </head>
 ```
 
-In the code above, the `head` tag wraps the `link` tag. The `link` tag has two attributes, `rel` and `href`. The `rel` attribute creates a relationship between the HTML file and the `href` of the `link` tag. The `href` of the link tag, here, is the relative pathname of the stylesheet. In the `href`, the `..` tells the browser to look two folders up; the `css` means that once two folders up, it should look for the `css` folder; the `styles.css` tells the browser which file in the `css` folder to import.
+In the code above, the `head` tag wraps the `link` tag. The `link` tag has two attributes, `rel` and `href`. The `rel` attribute creates a relationship between the HTML file and the `href` of the `link` tag. The `href` of the link tag, here, is the relative pathname of the stylesheet. In the `href`, the `..` tells the browser to look not in the current folder, but the folder that the current folder lives in; the `css` means that once it is in the folder holding the current folder, it should look for the `css` folder; the `styles.css` tells the browser which file in the `css` folder to import.  
 
-Note that the `link` tag links documents and is used inside the `head` tag. This is different from the `a` tag, which is used inside the `body` for linking to other webpages. Although conceptually not confusing, the naming can sometimes be.
+Note that the `link` tag links documents and is used inside the `head` tag. This is different from the `a` tag, which is used inside the `body` for linking to other webpages. Although conceptually not confusing, the naming can sometimes be.  
 
-Because the browser reads the HTML file from top to bottom, when reading the HTML file, it imports and reads the CSS file before reading the HTML body. This means that the CSS code that you write will essentailly be inside your HTML file.
+Because the browser reads the HTML file from top to bottom, when reading the HTML file, the browser imports and reads the CSS file before reading the HTML body. This means that the CSS code that you write will essentailly be inside your HTML file, and you can use the CSS class in the `.css` file to style your HTML elements.
 
-To test whether you properly improted the CSS file into your HTML, you should write a CSS class. When writing a CSS class, first you need to declare which HTML element type it applies to, for instance, `h1`, `div`, `img`, etc.
+To test whether you properly improted the CSS file into your HTML, you should write a CSS class. When writing a CSS class that applies to all elements of a certain tag type, first you need to declare which HTML element type it applies to, for instance, `h1`, `div`, `img`, etc.
 
-Then should follow an object, which you declare using `{ }`. Each class object is comprised of key:value pairs separated by a semi-colon. Each key is the name of a CSS property and each value defines that property for the class you're writing. Here is an example of a CSS class:
+Then should follow an object, which you declare using `{ }`. Each class object is comprised of key:value pairs separated by a semi-colon. Each key is the name of a CSS property and each value defines that property for the class you're writing. Here is an example of a CSS class for the `h1` tag:
 
 ```css
 h1 {
@@ -185,17 +185,17 @@ h1 {
 }
 ```
 
-In the example above, the class is for `h1` tags and has key:value properties that set the background color, text color, margin, padding, and width. Background color, text color, and width are self-explanatory. Margin and padding maybe not. Margin is the space surrounding the element. Padding is the space between the element's boundary and the content inside it. So margin defines the space between elements and padding defines the space between the element and its own content.
+In the example above, the class is for `h1` tags in your HTML file and has key:value properties that set the background color, text color, margin, padding, and width. Background color, text color, and width are self-explanatory. Margin and padding maybe not. Margin is the space surrounding the element. Padding is the space inside the element between the element's boundary and the content inside it. So margin defines the space between elements and padding defines the space between the element and its own content inside.
 
-Many other CSS properties exist. Here is a [list of CSS Properties](https://www.w3schools.com/cssref/default.asp). Use it as a resource when styling your web applications.
+Many other CSS properties exist. Here is a [list of CSS Properties](https://www.w3schools.com/cssref/default.asp). Use it as a resource when styling your web applications.  
 
-To see this HTML in your own browser, download this repository and drag to the browser the [styles html file](html/styles_one.html). It should look like this:
+To see an examplein your own browser, download this repository and drag to the browser the [styles html file](html/styles_one.html). It should look like this:
 
 ![](images/styles_one_photo.png)
 
 ### CSS Style Attribute
 
-Instead of using a stylesheet, you can use an HTML element's `style` attribute to add CSS to your webpage. Set the `style` attribute to a string (not an object) containing key:value pairs separated by a semi-colon. Like in a `.css` file, each key is the name of a CSS property and each value defines that property for the class you're writing. Here is an example:
+Instead of using a stylesheet, you can use an HTML element's `style` attribute to add CSS to your webpage. Set the `style` attribute to a string (not an object) containing key:value pairs separated by a semi-colon. Like a CSS class in an external `.css` file, each key is the name of a CSS property and each value defines that property for the class you're writing. Here is an example:
 
 ```html
 <p
@@ -213,11 +213,11 @@ Instead of using a stylesheet, you can use an HTML element's `style` attribute t
 
 In this example, you set the `style` attribute of a `p` tag equal to a string containing key:value properties that set the background color, text color, margin, padding, and width.
 
-To see this HTML in your own browser, download this repository and drag to the browser the [styles html file](html/styles_two.html). It should look like this:
+To see an example in your own browser, download this repository and drag to the browser the [styles html file](html/styles_two.html). It should look like this:
 
 ![](images/styles_two_photo.png)
 
-You will see this approach online in tutorials and documentation, so you should know how to read it. Remember, however, that your web applications will be easier to read and maintain and lead to more efficient code if you use stylesheets instead of the `style` attribute.
+You will see this approach online in tutorials and documentation, so you should know how to read it. Remember, however, that your web applications will be easier to read and maintain and lead to more efficient code if you use external stylesheets instead of the `style` attribute.
 
 ## [CSS Selectors](#css-selectors)
 
@@ -235,13 +235,19 @@ The _`.class`_ selector styles all elements whose `class` attribute contains the
 }
 ```
 
-Now that you have a CSS class, you should apply it to an HTML element. Using the HTML element's `class` attribute, you can match and HTML element to your CSS class name. Here is an example:
+Now that you have a CSS class, you should apply it to an HTML element. Using the HTML element's `class` attribute, you can match an HTML element to your CSS class name. Here is an example:
 
 ```html
 <h1 class="page-title">Hello ITC!</h1>
 ```
 
-In the example, you style the `h1` tag with the `.page-title` custom class you wrote by setting the `h1` tag's `class` attribute equal to the name of the CSS class as a string`"page-title"`. Instead of styling all the `h1` tags, you only styled the one with its `class` set to `.page-title`.  You can, however, apply that same `class` to multple HTML elements of any type. So it's reusable, unlike the `script` example above.
+In the example, you style the `h1` tag with the `.page-title` custom class you wrote by setting the `h1` tag's `class` attribute equal to the name of the CSS class as a string`"page-title"`. Instead of styling all the `h1` tags, you only styled the one with its `class` set to `.page-title`.  You can, however, apply that same `class` to multple HTML elements of any type. So it's reusable, unlike the `script` example above. Also, you can apply more than one selector to an HTML element. If in addition tothe `.page-title` selector, you also have a `.bold-text` selector, you can apply both to the same HTML element by putting a space between the class name, like this:
+
+```html
+<h1 class="page-title bold-text">Hello ITC!</h1>
+```
+
+Note, that if the `.page-title` and `.bold-text` classes were to have conflicting styles (e.g., one with `font-weight: 100` and the other with `font-weight: 900`), the one appearing lower in the `.css` file will win.  
 
 As you can see from the example, the syntax for a _`.class`_  selector is a `.` followed by a name that you choose. When naming your own class, choose names that are unique, short, and descriptive. Good naming will make your code easier to maintain. Plus, good naming helps you tell a story with your code, which makes it easier to understand. When someone reads it, good names bring your code to life! Avoid using names that are the same as those for built-in functions and variables, other reservered names, and the same as other variables of yours.
 
