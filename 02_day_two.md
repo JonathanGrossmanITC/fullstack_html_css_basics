@@ -9,6 +9,161 @@ By the end of this lesson, you will have:
 - An intro to CSS animations
 - Self study idea for finding loaders and other animations
 
+## [Flexbox](#flexbox)
+
+Flexbox provides an efficient way to organize multiple HTML elements on a webpage in a column *or* row (i.e, in one dimension). In later chapters, you learn about positioning a single HTML element using the `position` property and about positioning multiple HTML elements on a webpage in a grid of rows *and* columns (i.e, two-dimentions).
+
+Flexbox isn't just one style property. Rather, it consists of a collection of CSS style properties that can be used together. When using flexbox, you turn one element into a flex container. The elements in that container will then display flex behavior, meaning that the container element can adjust the height, width, direction, and order based on the space available in the container and other considerations. 
+
+Flexbox's behavior makes it a good choice when working with dynamic content. An example of its dynamic behavior, based on the screensize, is when a flex container expands an interior element's width to fill available free space due to a large screensize. In contrast, it also can shrink an interior element's width to prevent overflow. It can even handle elements that have dynamic size values, like `%` and wrap elements when the parent container lacks enough space to fit all in one row or column (which can make it's one-dimensional structure look like a grid). 
+
+Flexbox's dynamic behavior also allows you to write code that changes orientation, direction, and proportion based on screensize or other factors. In contrast, using display properties of `block` or `inline` restrict you to top-bottom or left-right directions. This will make more sense when you see some examples.
+
+Flexbox style properties are divided into two main categories: (1) those for the container element; (2) those for the interior elements. 
+
+### Parent Flexbox Properties
+
+Many powerful parent flexbox properties exist. The main parent flexbox property you should know is `display: flex`. Setting the `display` property to `flex` turns an HTML element into a flexbox container. Without it, the other flexbox properties won't work. 
+
+Inside a flex container, elements are aligned on the main axis. The main axis of a `div` is the `x-axis`, so the elements inside a `div` flexbox container will appear next to each other by default. Note that the flex container influences only the elements and content directly inside it. Not the elements inside those elements. 
+
+Here is an example of a CSS class with its `display` property set to `flex`.
+
+```css
+.buttons-wrapper {
+  border: 1px solid black;
+  display: flex;
+  margin: 5px;
+}
+
+.button {
+  background-color: gray;
+  border-radius: 10px;
+  margin: 5px;
+  padding: 10px;
+}
+```
+
+In this example, the `.buttons-wrapper` class has its `display` property set to `flex` and a `border` and `margin`. The `.button` class has a background color, border-radius, margin, and padding. Here is the corresponding HTML:
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="../css/flexbox.css" />
+    <title>Hello</title>
+  </head>
+  <body>
+    <h1>Hello ITC!</h1>
+    <h2>Welcome.</h2>
+    <p>This is text inside a paragraph tag.</p>
+    <div>This is text inside a div.</div>
+    <h4>
+      <span>This half is in a span, </span>
+      <span>and this half is in a different span.</span>
+    </h4>
+    <div class="buttons-wrapper">
+      <div class="button">Start</div>
+      <div class="button">Pause</div>
+      <div class="button">End</div>
+    </div>
+  </body>
+</html>
+```
+The relevant elements are the `div` with its `class` set to `"buttons-wrapper"` and also the `div` elements inside it with their `class` set to `"button"`. Notice that the three buttons are nested inside the buttons-wrapper. Here is how the example looks in the browser:
+
+![](images/flexbox_one_photo.png)
+
+Notice that the flex container takes up the entire line and that the three interior HTML elements appear next to each other on the x-axis.
+
+Other display properties of the parent include `justify-content` and `align-items`. Used alone or in combination, you can position the interior elements within the flex container. For instance, you can center the interior elements either horizontally, vertically, or both. You also can position them all to the left, top, right, or bottom of the flex container.
+
+The `justify-content` property lets you position items along the main axis. The `align-items` property lets you position items along the cross axis. In the example above, the `x-axis` is the main axis and the `y-axis` is the cross axis. To center the elements along the `x-axis`, use `justify-content: center`. To center the elements along the `y-axis`, use `align-items: center`. Modifying the CSS might look like this:
+
+```css
+.buttons-wrapper {
+  align-items: center;
+  border: 1px solid black;
+  display: flex;
+  height: 100px;
+  justify-content: center;
+  margin: 5px;
+}
+
+.button {
+  background-color: gray;
+  border-radius: 10px;
+  margin: 5px;
+  padding: 10px;
+}
+```
+In the modified example above, you added `align-items`, `height`, and `justify-content` properties to the `.buttons-wrapper` class. The two flexbox properties are set to values that center the interior buttons and the `height` property is there to make it more obvious that the buttons are vertically centered. Here's what it looks like in the browser.
+
+![](images/flexbox_two_photo.png)
+
+In addition to positioning *elements* inside a flexbox container, you can use the technique above to position *text* horizontally and/or vertically inside an element. For instance, you could turn the `.button` class into a flex container with `align-items` and `justify-content` set to `center`. Then, the text inside the `.button` will appear in the middle of the button.
+
+Centering is just one way you can position elements or text within a flex container. You also can align items at the start or end of the container. Plus, the parent container has many other flexbox options, like `flex-direction` and `flex-wrap`. Check out [this great flexbox guide](https://css-tricks.com/snippets/css/a-guide-to-flexbox/).
+
+A note on `flex-direction` -- it flips which axis is the main and which is the cross access. This results in `align-items` and `justify-content` controlling whichever axis it didn't control by default instead of its default axis. In the example above, adding `flex-direction: column` to the `div` results in `align-items` controlling horizontal orientation of the child elements and `justify-content` controlling the vertical (the opposite of the default on a `div`).
+
+### Child Flexbox Properties
+
+The children elements in a flexbox container also have their own properties. For instance, `flex-grow` and `flex-shrink` allow you to increase or decrease the size of an interior element based on the available space in the container. Each of them accept an integer as a value. That value determines the proportion of available space the item should occupy.
+
+For example, for `flex-grow`, if all interior elements are `flex-grow: 1`, any extra space in the container will be distributed equally. If, however, one of the children is `flex-grow: 2`, it would try to occupy twice as much space as the others.
+
+Here is an example CSS:
+
+```css
+.buttons-wrapper {
+  align-items: center;
+  border: 1px solid black;
+  display: flex;
+  height: 100px;
+  justify-content: center;
+  margin: 5px;
+}
+
+.button-start {
+  background-color: green;
+  border-radius: 10px;
+  flex-grow: 1;
+  margin: 5px;
+  padding: 10px;
+}
+
+.button-pause {
+  background-color: yellow;
+  border-radius: 10px;
+  flex-grow: 2;
+  margin: 5px;
+  padding: 10px;
+}
+
+.button-end {
+  background-color: red;
+  border-radius: 10px;
+  flex-grow: 1;
+  margin: 5px;
+  padding: 10px;
+}
+```
+
+This is a similar example to the ones before, but now you have three button classes. The `.button-start` and `.button-end` classes each have `flex-grow: 1` and the `.button-pause` class has `flex-grow: 2`. The HTML file in this example is basically the same as before, except now the new CSS class names for the buttons are matched to the corresponding HTML element. 
+
+Here's what it looks like in the browser:
+
+![](images/flexbox_three_photo.png)
+
+See that the pause button (i.e., the one with the `.button-pause` class) takes up twice as much extra space as the other two. 
+
+Another common thing to do is set the child's `align-self` or `justify-self` properties to override the `align-items` or `justify-content` properties, respectively, as applied to that child. It essentially takes that child out of the normal flow. This is good, for example, if you want all elements centered in the flex container except for one of the elements. You can use`align-self` or `justify-self` on that child to position it.  
+
+There is a lot more you can do with child components CSS flex properties, like even set the order in which they align themselves. Again, check out [this great flexbox guide](https://css-tricks.com/snippets/css/a-guide-to-flexbox/).
+
+Other resources that might help are [MDN's flexbox basics](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox), [W3 Schools Flexbox](https://www.w3schools.com/css/css3_flexbox.asp), and [Flexbox Frogger](https://flexboxfroggy.com/).  
+
 
 ## [Position Style Property](#position-style-property)  
 
@@ -80,62 +235,6 @@ What happens when you change the `position` properties of either class to someth
 
 For more examples and resources, visit [W3 Schools](https://www.w3schools.com/cssref/pr_class_position.asp), [CSS Tricks Position](https://css-tricks.com/almanac/properties/p/position/) and [CSS Tricks Top Right Bottom Left](https://css-tricks.com/almanac/properties/t/top-right-bottom-left/).
 
-
-## [Media Queries](#media-queries)  
-
-Media queries are used in responsive web design to help customize the view based on the user's screensize. In other words, media queries allow you to set HTML element properties that depend upon whether a certain condition is true. For purposes of responsive web design, usually that contidion is the screen width. So, for instance, you can choose for an element to have `font-size: 28px` when the screen is greater than `760px` wide and `font-size: 24px` when the screen is less than or equal to `760px`. This means that you can design webpages that look great on phones, tablets, and computers of all sizes.
-
-### Media Query Syntax and Example
-
-This section focuses on media queries for responsive web design. You write media queries in your CSS code. The syntax for media queries requires `@media` followed by a condition and then an object containing CSS classes. The CSS classes in the media query must be below its corresponding class in the [CSS document](https://stackoverflow.com/questions/7859336/why-are-my-css3-media-queries-not-working).
-
-Here is an example of a media query from a CSS file: 
-
-```css
-body {
-  background-color: blue;
-}
-
-@media only screen and (max-width: 600px) {
-  body {
-    background-color: red;
-  }
-}
-```
-
-In the example above, you see the `@media` syntax followed by the condition ` only screen and (max-width: 600px)`, which translates to "only when the screen is 600px or less". This is called a breakpoint. Then comes the object containing CSS classes. Ultimately, the `body`'s background color will be `red` when the screensize is `600px` or less. Otherwise, it is` blue`. 
-
-In your browser, look at the example [media queries file](html/media_queries.html). Change the browser size. See how below `600px` screen width the background is `red` and above it is `blue`. Now, modify the code to add other CSS styles to your breakpoint so that more than just the background color changes. Also try adding additional breakpoints. When doing so, know that the order or your [media queries matters](https://stackoverflow.com/questions/8790321/why-does-the-order-of-media-queries-matter-in-css).
-
-For more on media queries generally, check out [W3 Schools Media Queries](https://www.w3schools.com/cssref/css3_pr_mediaquery.asp) page.
-
-### Mobile-First Approach
-
-When writing responsive web applications, you need to write CSS that accounts for screens of all sizes. By taking a mobile-first approach, you design your application for mobile screens and then use media queries to account for larger screens. A mobile-first approach results in a faster page display on smaller devices.
-
-Your standard styles are those appearing outside the media queries, and your media query styles are those inside the media queries. With a mobile-first approach, your standard styles will control the style generally and on mobile devices, and the media queries will control some of the styles in larger screens. The condition in your media queries, thererfore, will change the design when the page increases in size.
-
-Here is an example of a [set of media queries](https://stackoverflow.com/questions/28016406/problems-with-media-queries/) for mobile first:
-
-```css
-@media only screen and (min-width: 320px) {
-    /*your CSS Rules*/     
-}
-@media only screen and (min-width: 480px) {
-    /*your CSS Rules*/     
-}
-@media only screen and (min-width: 640px) {
-    /*your CSS Rules*/     
-}
-@media only screen and (min-width: 768px) {
-    /*your CSS Rules*/     
-}       
-@media only screen and (min-width: 960px) {
-    /*your CSS Rules*/ 
-}
-```
-
-Look at the example located in the [mobile_first file](html/mobile_first.html) file so that you see the webpage and open the code in a Code Editor. In the code, you'll see code that hides elements, changes font size, and more based on a mobile-first approach. Play around with the code. Add your own responsive features. View it in the browser as a webpage to see your changes.
 
 ## [CSS Animations](#css-animations)  
 
