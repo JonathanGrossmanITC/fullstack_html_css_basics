@@ -2,6 +2,9 @@
 
 In this lesson, you learn about the `position` style property and its cousins `top`, `right`, `bottom`, and `left`. Those are great for positioning a single element with precision. Next, you practice working with media queries. Media queries are a very useful tool in responsive web design. They let you change an element's style based on the screensize. Then, you learn about CSS animations. Use transitions and keyframes to animate elements on your page.
 
+
+In this lesson, you also learn about flexbox, a powerful toolset for creating layouts for multiple HTML elements in either a row or column. In later chapters, you learn about using CSS to position individual elements (`position` and its cousins) and to position multiple elements using Grid (columns *and* rows). In a later chapter, you learn a fourth layout option, too, which is using Bootstrap's layout system. 
+
 By the end of this lesson, you will have:
 
 - The basics of using [Flexbox](#flexbox) for layout  
