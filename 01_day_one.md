@@ -1,21 +1,21 @@
 # Day 1: HTML and CSS Basics
 
-HTML, CSS, and JavaScript are the three main languages requried for building the frontend of a web application. HTML and CSS are used primarily to organize and style the contents of a webpage, and JavaScript is used to provide functionality.
+HTML, CSS, and JavaScript are the three main languages required for building the frontend of a web application. HTML and CSS are used primarily to organize and style the contents of a webpage. In contrast, JavaScript is used to provide functionality to your page. For instance, using JavaScript, you can send the values entered into a form to a server or change the information shown on the page based on what the user clicks.  
 
-When a user opens a browser on their computer, the browser requests from a server the files it needs to display the website to the user. Those files include the HTML, CSS, and JavaScript files the browser needs to build the webpage (i.e., the source code), plus any images, videos, and other files that the webpage displays. The browser uses the source code and other files to assemble the webpage for the user to see and interact with.
+Read this lesson and look at the links before the first class. In class, you will be expected to be familiar with the topics in this document. You will watch a live coding session that uses the concepts discussed in here. In that live coding session, we will set up our frontend web application and begin building our mobile-first design.  
 
-Here in this lesson, first, you cover the very basics of HTML and CSS. Then, you dive into more intermediate topics like CSS selectors for custom styling HTML elements. 
+We will start the class by building the folders and files the browser needs to load our web application. In doing this, we will do a quick refresher on what HTML and CSS are. We will talk about how when a user opens a browser on their computer, the browser requests the HTML, CSS, JavaScript, and media files the browser needs to build the webpage (i.e., the source code). The browser uses the source code and other files to assemble the webpage for the user to see and interact with.
 
-In this lesson, you also learn about flexbox, a powerful toolset for creating layouts for multiple HTML elements in either a row or column. In later chapters, you learn about using CSS to position individual elements (`position` and its cousins) and to position multiple elements using Grid (columns *and* rows). In a later chapter, you learn a fourth layout option, too, which is using Bootstrap's layout system. 
+Here in this lesson, you start by studying the very basics of HTML and CSS. This will help you build your project folder and connect your HTMl, CSS, and JavaScript files. Next, you'll learn about using external stylesheets and CSS selectors. Then, you'll learn about a mobile-first approach to web development. This mobile-first approach will help you think about how to approach structuring your code as your start your project.  
 
 Although this lesson assumes you already have some HTML, CSS, and JavaScript skills, it is not required that you do.
 
 By the end of this lesson, you will have:
 
-- A refresher on [HTML and CSS basics](#html-and-css-refresher)  
-- An intro to [CSS Selectors](#css-selectors)  
-- Mobile-first design using [media queries](#media-queries)  
-- Self-study resources for learning about pseudo elements
+- A refresher on [HTML and CSS basics](#html-and-css-refresher) and a good idea of how to structure your project folder    
+- An intro to [CSS Selectors](#css-selectors) and the ability to work with an external stylesheet    
+- Mobile-first design using [media queries](#media-queries) to help you think about structuring your project from the start    
+- Self-study resources for learning about pseudo elements  
 
 ## [HTML and CSS Refresher](#html-and-css-refresher)
 
