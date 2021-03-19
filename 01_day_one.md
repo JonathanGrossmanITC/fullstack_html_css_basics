@@ -264,7 +264,7 @@ Media queries are used in responsive web design to help customize the view based
 
 ### Media Query Syntax and Example
 
-This section focuses on media queries for responsive web design. You write media queries in your CSS code. The syntax for media queries requires `@media` followed by a condition and then an object containing CSS classes. The CSS classes in the media query must be below its corresponding class in the [CSS document](https://stackoverflow.com/questions/7859336/why-are-my-css3-media-queries-not-working).
+This section focuses on media queries for responsive web design. You write media queries in your CSS code. The syntax for media queries requires `@media` followed by a condition, and then an object containing CSS classes. The CSS classes in the media query must be below its corresponding class in the [CSS document](https://stackoverflow.com/questions/7859336/why-are-my-css3-media-queries-not-working).  
 
 Here is an example of a media query from a CSS file: 
 
@@ -312,7 +312,7 @@ Here is an example of a [set of media queries](https://stackoverflow.com/questio
 }
 ```
 
-Look at the example located in the [mobile_first file](html/mobile_first.html) file so that you see the webpage and open the code in a Code Editor. In the code, you'll see code that hides elements, changes font size, and more based on a mobile-first approach. Play around with the code. Add your own responsive features. View it in the browser as a webpage to see your changes.
+Look at the example located in the [mobile_first file](html/mobile_first.html) so that you see the webpage and open the code in a Code Editor. In the code, you'll see code that hides elements, changes font size, and more based on a mobile-first approach. Play around with the code. Add your own responsive features. View it in the browser as a webpage to see your changes.
 
 
 ## [Self Study](#self-study)
