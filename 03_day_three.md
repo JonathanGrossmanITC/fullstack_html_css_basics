@@ -4,110 +4,153 @@ In this lesson, you cover the very basics of using CSS Grid. This layout module 
 
 By the end of this lesson, you will have:
 
-- CSS grid layout basics
-- An intro to Bootstrap
-- Self study suggestions for building a layout and working with font awesome
+- An intro to CSS animations  
+- An intro to Bootstrap  
+- Self study idea for finding loaders and other animations  
 
 
-## [CSS Grid](#css-grid)
+## [CSS Animations](#css-animations)  
 
-CSS Grid Layout is a grid-based layout system great for controlling your page layout by row and column. It provides an alternative to or supplement for working with the `position` style property and flexbox. The `position` style property is useful for positioning individual elements and flexbox is great for positioning in one dimension (column or row). Neither, however, is a great solution for positioning in two-dimensions. That's where Grid excels.
+CSS animations let you change the style of an HTML element. By gradually changing an element's location on the page, size, orientation, and more, you can animate parts of your page.
 
-CSS Grid is a solution for positiong HTML elements in two-dimensions. In some ways Grid behaves like a table because you can layout the elements in columns and rows. Grid, however, is more dynamic and flexible than a table because in a Grid the container's child elements can overlap and layer. Hence, Grid offers the organization of a table but a flexibility similar to CSS positioned elements.
+Two important toolsets for CSS animations are transitions and keyframes. 
 
-When deciding whether to use Grid, flexbox, or `position`, ask what you're trying to position. If you're positioning a single element, then `position` or flexbox are good tools. If you're positioning multiple elements in a row *or* column, then flexbox is a good option. If you're positioning multiple elements in rows *and* columns, the Grid is a good option (or maybe a flexbox container that wraps).
+### Transitions
 
-Similar to flexbox, a Grid layout has a parent element with one or more child elements nested inside. To make the parent a Grid container, set its `display` property to `grid` or `inline-grid`.
+A [transition](https://www.w3schools.com/css/css3_transitions.asp) gradually changes one or more property values for a CSS class over a specified period of time. The collection of properties for a transition are `transition-property`, `transition-duration`, `transition-timing-function`, and `transition-delay`. The `transition-property` and `transition-duration` are mandatory and the other two are optional.
+
+The `transition-property` defines which CSS property the transition applies to. The `transition-duration`	defines how long the transition will last.  The `transition-timing-function` defines the speed curve of the transition. Check out the [Cubic Bezier site](https://cubic-bezier.com/#) to learn more. The `transition-delay` defines any delay in seconds before the transition occurs.
+
+You can set one or more of the transition properties all at once using the `transition` property. The order of the values are `transition: <transition-property>, <transition-duration>, <transition-timing-function>, <transition-delay>`. Here is an example of setting the `transition-property` and `transition-duration` using the `transition` property:
+
 
 ```css
-.grid-container {
-  display: grid;
-}
-```
-
-The HTML elements nested inside a `display: grid;` element will automatically become items within the grid. You can read more about the properties for [Grid containers](https://www.w3schools.com/css/css_grid_container.asp) and [Grid items](https://www.w3schools.com/css/css_grid_item.asp).
-
-Meanwhile, here is an example using Grid. First, here is the HTML:
-
-```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <link rel="stylesheet" href="../css/grid.css" />
-    <title>Hello</title>
-  </head>
-  <body>
-    <div class="wrapper">
-      <div class="box box-one">Box One</div>
-      <div class="box box-two">Box Two</div>
-      <div class="box box-three">Box Three</div>
-    </div>
-  </body>
-</html>
-```
-
-Here is the corresponding CSS:
-
-```css
-.wrapper {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  grid-auto-rows: minmax(100px, auto);
-}
-
-.box {
-  align-items: center;
-  color: darkorchid;
-  display: flex;
-  justify-content: center;
+.footer {
+  background-color: gray;
   font-size: 24px;
-  padding: 10px;
-}
-
-.box-one {
-  border: 1px solid black;
-  grid-column: 1;
-  grid-row: 1;
-}
-
-.box-two {
-  border: 1px solid black;
-  grid-column: 3 / 4;
-  grid-row: 1 / 4;
-}
-
-.box-three {
-  border: 1px solid black;
-  grid-column: 1 / 3;
-  grid-row: 2 / 4;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  transition: font-size 1s;
 }
 ```
 
-In the example above, the HTML element with the `.wrapper` class is the grid container. The `.wrapper` class defines the details for the columns, rows, and spacing of the grid. Here, the grid is 3 columns (`grid-template-columns: repeat(3, 1fr);`). See here for more about [`grid-template-columns`](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns). The rows are each 100px in height and width (`grid-auto-rows`) with a 10px space (`gap`) between them. The `.wrapper` class wraps other HTML elements.
+In the example above, the `.footer` class has a `transition: font-size 1s`, which means that the `font-size` will change over the duration of 1 second. You can define transitions for more than one property. To do so, separate the transition statements with a comma, like so:
 
-The classes `.box-one`, `.box-two`, and `.box-three` are assigned to HTML elements nested inside the `.wrapper` element. Each of those classes define by column and row where in the grid they are positioned. They can take up one square in the grid (i.e., an integer for each of the `grid-column` and `grid-row`), or they can take up multiple consecutive squares in the grid (i.e., a range of squares designated by `/` for one or both of `grid-column` and `grid-row` where the number after the `/` is not included). In the example, the `.box-one` class occupies a single square whereas the other classes occupy more. 
 
-Here is what it looks like:
+```css
+.footer {
+  ...
+  transition: font-size 1s, font-weight 2s;
+}
+```
 
-![](images/grid.png)
+In this example, the `font-size` will change over the duration of 1 second and the `font-weight` will change over the duration of 2 seconds.
 
-At this point you may be confused about when to use Grid and when to use flexbox. Deciding whether to use Grid versus flexbox is not always an easy decision. Consider some of their differences. Two main differences are:
+If instead of setting only the property and duration, you want to set three or all four `transition` properties, you can do so easily. An example of setting all four is:
 
-- Flexbox allows each item to take up as much space as its content allows, whereas Grid has strict sizing that doesn't automatically adjust by default to its content size. 
-- Flexbox can adjust the number of items in a row (or column) based on the browser's width (or height), whereas a Grid will maintain the same orientation by default regardless of the browser's width. 
+```css
+.footer {
+  ...
+  transition: font-size 1s linear 2s;
+}
+```
 
-These are [among the things to consider](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Relationship_of_Grid_Layout) when deciding how to use Grid and flexbox. Although you can oftentimes achieve the same result using either approach, one might be better for you than the other given your circumstances.
+In the example above, the `.footer` class has one transition -- a `font-size 1s linear 2s`. This means that the `font-size` will change over the duration of 1 second using a linear timing function after a delay of 2 seconds. 
 
-You can use Grid and the `property` style element together. If you add to the Grid container the `position: relative` style property, then it serves as both the Grid container and also the *positioned* element for any elements inside it. The wrapped elements can now use Grid for sizing, spacing and general layout, and also use `position: absolute` in combination with `top`, `right`, `bottom`, and `left` to take elements out of the flow of the general layout. Check out [how to use Grid with absolute positioning](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Relationship_of_Grid_Layout#grid_and_absolutely_positioned_elements).
+Now that you know how to write the transition, you need to know how to trigger it. For the transition to start, you need to something to change the value of the `font-size`. One way to change the value of the font-size is to use a hover effect. Here is an example of the code:
 
-Look at the example located in the [grid file](html/grid.html) so that you see the webpage and open the files in a Code Editor. In the files, you'll see code that creates a CSS grid. View how it looks in the browser. Play around with the code to change the grid layout and other styles. 
+```css
+.footer:hover {
+  font-size: 28px;
+}
+```
 
-Is the grid responsive? How can you use the `position` style property and flexbox in combination with Grid?
+In the example above, when the user hovers their mouse over the footer, the `font-size` will increase from `24px` to `28px` Rather than change size by its default behavior, the `font-size` will change according to the terms of your `transition`.
 
-Can you [make the same layout](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Relationship_of_Grid_Layout#the_same_layout_with_css_grids) using flexbox instead of Grid?
+In addition to the hover effect, research which other [Pseudo elements](https://www.w3schools.com/css/css_pseudo_elements.asp) you could use with transitions. The [Using CSS Transitions page by MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions) has additional information and [CSS Tricks](https://css-tricks.com/almanac/properties/t/transition/) has some good examples. Also, check out this [list of some simple but powerful techniques](https://www.webdesignerdepot.com/2014/05/8-simple-css3-transitions-that-will-wow-your-users/) for using transitions to animate.
 
-Try learning more about CSS Grid Layout on your own. MDN's article about the [relationship of grid layout to other layout methods](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Relationship_of_Grid_Layout) and the [basics of CSS Grid](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout). Think about [when to use Flexbox and when to use CSS grid](https://blog.logrocket.com/flexbox-vs-css-grid/). Also consider looking at [W3Schools](https://www.w3schools.com/css/css_grid.asp)'s documentation.
+### Keyframes
+
+CSS [animations](https://www.w3schools.com/css/css3_animations.asp) change an element's style over a given time. In an animation , you can change one or more style properties at a time. You use the `@keyframes` rule to name the animation and identify the styles that change and at which time points. Here is an example:
+
+```css
+/* The animation code */
+@keyframes color-change {
+  0%   {color: black;}
+  25%  {color: white;}
+  50%  {color: blue;}
+  100% {color: black;}
+}
+```
+
+After declaring your `@keyframes`, you need to bind it to an HTML element using one of the `animation` subproperties. The collection of subproperties that comprise the `animation` property are `animation-name`, `animation-duration`, `animation-timing-function`, `animation-delay`, `animation-iteration-count`, `animation-direction`, `animation-fill-mode`, and `animation-play-state`. 
+
+You bind the `@keyframes` to an element by setting the `@keyframes` name as the value of `animation-name`. The `animation-name` and also the `animation-duration` are mandatory when making an animation. The`animation-duration` defines how long one iteration of the animation lasts. It's default value is `0s`, so the animation doesn't run unless you override the default value.
+
+To help explain the syntax for an animation, here is an example of an animation:
+
+```css
+/* The animation code */
+@keyframes color-change {
+  0%   {color: black; font-size: 24px}
+  25%  {color: white; font-size: 30px}
+  50%  {color: blue; font-size: 18px}
+  100% {color: black; font-size: 24px}
+}
+
+/* The element to apply the animation to */
+.footer {
+  animation-name: color-change;
+  animation-duration: 4s;
+  background-color: gray;
+  font-size: 24px;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  transition: font-size 1s; 
+}
+```
+
+As you see in the example, the `@keyframes` block starts with `@keyframes`, followed by the name of the animation, and then `{ }`. Inside are pairs of a `%` and an object of key:value pairs. The `%` corresponds to the point in time of the `animation-duration` and the key:value pairs are CSS styles. In this example, the animation will change the element's `color` and `font-size` at each of 0%, 25%, 50%, and 100% of the `animation-duration` of 4 seconds. 
+
+In the example, at the beginning of the animation the font `color` is black and `font-size` is 24 pixels. Next, after 25% of the duration passes, the font `color` turns white and `font-size` becomes 30 pixels. Then, after 50% duration the font `color` turns blue and `font-size` becomes 24 pixels. Finally, the font `color` turns black and `font-size` returns to 24 pixels after 100% of the animation duration.
+
+The `@keyframes color-change` animation is bound to the the `.footer` class because the `animation-name` for the `.footer` is `color-change` (the name of the `@keyframes`). The animation will last 4 seconds because the `animation-duration` for the `.footer` is `4s`.
+
+As an alternative to using percentages for time, you can use `from` and `to` for a gradual change between two values:
+
+```css
+@keyframes two-color-change {
+  from {color: black;}
+  to {color: blue;}
+}
+```
+
+In this approach, the font color will change from black to blue gradually over the `animation-duration`.
+
+As for the rest of the animation properties, here are a few notes. The `animation-timing-function` defines the animation's speed curve. Check out the [Cubic Bezier site](https://cubic-bezier.com/#) to learn more about speed curves. The `animation-delay` sets any delay before the animation starts. Negative values are allowed, which results in the animation starting part-way through its duration.
+
+The`animation-iteration-count` defines how many times the animation should be played. You can declare an integer or `infinite`. The `animation-direction`	declares whether an animation should be played forwards, backwards or in alternate cycles. The `animation-fill-mode` defines styles for the element when the animation is not playing. The `animation-play-state` is the status of whether the animation is playing or paused. 
+
+Find out more details about these properties and see some examples at [W3Schools page for CSS animations](https://www.w3schools.com/css/css3_animations.asp).
+
+You can set one or more of the animation properties all at once using the `animation` property. The order of the values are `animation: <animation-name>, <animation-duration>, <animation-timing-function>, <animation-delay>, <animation-iteration-count>, <animation-direction>, <animation-fill-mode>, <animation-play-state>`. Here is an example of setting six of the `animation` properties using the shorthand:
+
+```css
+.footer {
+  animation: change-color 5s linear 2s infinite alternate;
+  ...
+}
+```
+
+In the example above, the animation is the `@keyframes` named `change-color `, and it will last 5 seconds, have a linear timing function, it will be delayed for 2 seconds, it will run infinitely, and it will alternate directions.
+
+### Examples of Animations
+
+Look at the example located in the [animations file](html/animations.html) so that you see the webpage and open the files in a Code Editor. In the files, you see code that animates the page using keyframes and transitions. Play around with the code to understand how the durations and delays interact with one another. How can you change the CSS properties to improve this? How can you use animations to make loaders and alerts? Add your own responsive features to this start and view your new and improved version in the browser as a webpage!
 
 
 ## [Intro to Bootstrap](#intro-to-bootstrap)
@@ -241,10 +284,9 @@ Bootstrap has a ton of utility classes that allow you to build upon their other 
 Finally, you can override Bootstrap styles by using your custom CSS. Let's say you want a button of a certain color that you can't find in Bootstrap. Write your own CSS class and apply it to the Bootstrap button element. Make sure you import your CSS file in your HTML file in the `head` below where you import Bootstrap.
 
 
-## [Self study](#font-awesome) 
 
-Practice planning your page before actually writing the code. When planning, first it's important to pick whether you're writing your own custom CSS or using a framework. Although it's okay to occassionaly mix the two at times, you want to have one primary approach in that regard. Then, decide what the layout looks like on paper. 
+## [Self Study](#self-study)
 
-Next, think about how you will use HTML and CSS to generate the basic layout (ignoring the finer details like text, font-size, color, etc.). Think about whether and how you can use the Grid system with flexbox and `position`. Think about which containers will hold which elements. Once you have a decent idea, start writing your code.
+You'll most likely want to keep your animations to a minimum, as too many animations can make your page look amateur and also cause performance issues. You will, however, want to use animations at least sometimes. For instance, you'll want to animate loaders. Check out Code Pen's [loaders](https://codepen.io/topic/loader/picks) and other [animations](https://codepen.io/search/pens?q=animations&depth=title). Also consider the [W3Schools page on loaders](https://www.w3schools.com/howto/howto_css_loader.asp).
 
-Finally, on an unrelated note, check out [Font Awesome](#https://fontawesome.com/). It's a libarary of icons that you might find useful. Use what you learned about Bootstrap to install Font Awesome and use its documentation.
+Try to use a Code Pen animation in your own code or design your own!  
