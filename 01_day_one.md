@@ -85,19 +85,19 @@ The root folder contains subfolders for `css`, `js`,`html`, and `images`. Usuall
 
 ### Developer Tools
 
-When you start practicing JavaScript, you will learn about the Document Object Model (DOM). The DOM represents an HTML document as an object so that the HTML document can communicate with a scripting language, like JavaScript. Using JavaScript, you can interact with the DOM to add functionality to your webpages.
+When you start practicing JavaScript, you will learn about the Document Object Model (DOM). The DOM is a JavaScript object that represents the HTML document. When in the form of a JavaScript object, you can write JavaScript code that interacts with your HTML file through this JavaScript object. This is how you add functionality to HTML documents.  
 
 To help interact with the DOM, HTML syntax uses tags to define elements in which you can put content. Every element in an HTML document is stored in the DOM. Using a scripting language like JavaScript, you can access and manipulate each element on the DOM.
 
-To help visualize the DOM and develop your code, you can use the inspector. Here is an example:
+To help visualize the DOM and develop your code, you can use the inspector in your browser. Here is an example:
 
 ![](images/inspector.png)
 
-As you see in the example, for any website you can right click on any part of the screen, and click "Inspect" in the popup menu. The developer tools will open, in which you find the Elements tab. Inside that tab, you can see the document's source code. Specifically, among other things, you can see the HTML and CSS of the document. You can even modify the source code. For instance, you can change the style properties or the text. When modifying the source, you're only modifying it for that browswer session. It's not saving your modifications. Simply refreshing the browser will revert the webpage back to pre-modification. This is, however, a common way to test your changes before actually making those changes in your code.
+As you see in the example, for any website you can right click on any part of the screen, and click **"Inspect"** in the popup menu. The developer tools will open, in which you find the **Elements** tab. Inside that tab, you can see a visual representation of your DOM object based on your HTML document's source code. Specifically, among other things, you can see the HTML and CSS of the document. You can even modify the DOM right here in your Elements tab. For instance, you can change the style properties or the text. When modifying the code in the Elements tab, you're only modifying it for that browswer session. It's not saving your modifications to your HTML file. Simply refreshing the browser will revert the webpage back to pre-modification. This is, however, a common way to test your changes before actually making those changes in your code.  
 
-Note that the browser source code is public. When you load a webpage, the files on which the browser loads the page are accessible in the developer tools. Accordingly, when using private information in your code, like access tokens and passwords, you should not put them in your frontend source code. You learn more about this later in the course.
+Note that the browser source code is public. When you load a webpage, the files on which the browser loads the page are accessible in the developer tools. Look at the **Sources** and **Network** tabs. What do you see? Because frontend files are public, when using private information in your code, like access tokens and passwords, you should not put them in your frontend source code. You learn more about this later in the course.
 
-As a developer, you oftentimes use the elements tab in the inspector to better understand how your HTML is organized, to debug CSS issues, and to try out new styles before writing your code. When you start writing JavaScript and servers, you use the inspector for much more, too.
+As a developer, you oftentimes use the Elements tab in the inspector to better understand how your HTML is organized, to debug CSS issues, and to try out new styles before writing your code. When you start writing JavaScript and server-side code, you use the inspector for much more, too.
 
 ### Tag Boundaries
 
