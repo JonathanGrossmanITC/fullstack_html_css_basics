@@ -3,8 +3,8 @@
 In this lesson, you learn about page layout. Specifically, you learn how to:  
 
 - Position a single element   
-- Align multiple HTML elements in a row **or** column   
-- Organize multiple HTML elements in rows **and** columns  
+- Align multiple HTML elements in a row ***or*** column   
+- Organize multiple HTML elements in rows ***and*** columns  
  
 To position an single HTML element, you will learn about the `position` style property and its cousins `top`, `right`, `bottom`, and `left`. This collection of properties is great for positioning a single element with precision, like a navbar, footer, or icon. 
 
@@ -104,13 +104,13 @@ For more examples and resources, visit [W3 Schools](https://www.w3schools.com/cs
 
 ## [Flexbox](#flexbox)
 
-Flexbox provides an efficient way to organize multiple HTML elements on a webpage in a column *or* row (i.e, in one dimension). In later chapters, you learn about positioning a single HTML element using the `position` property and about positioning multiple HTML elements on a webpage in a grid of rows *and* columns (i.e, two-dimentions).
+You just learned how to position a single HTML element using the `position` property. Now it's time to learn about Flexbox. This collection of properties provides an efficient way to organize multiple HTML elements on a webpage in a column ***or*** row. In other words, it helps your layout HTML elements in one dimension. 
 
-Flexbox isn't just one style property. Rather, it consists of a collection of CSS style properties that can be used together. When using Flexbox, you turn one element into a flex container. The elements in that container will then display flex behavior, meaning that the container element can adjust the height, width, direction, and order based on the space available in the container and other considerations. 
+Flexbox isn't just one style property. Rather, it consists of a collection of CSS style properties that you can use in various combinations. When using Flexbox, you turn one element into a flex container. The elements in that container will then display flex behavior, meaning that the container element can adjust the height, width, direction, and order of the elements inside it based on the space available in the container and other considerations. 
 
-Flexbox's behavior makes it a good choice when working with dynamic content. An example of its dynamic behavior, based on the screensize, is when a flex container expands an interior element's width to fill available free space due to a large screensize. In contrast, it also can shrink an interior element's width to prevent overflow. It can even handle elements that have dynamic size values, like `%` and wrap elements when the parent container lacks enough space to fit all in one row or column (which can make it's one-dimensional structure look like a grid). 
+Flexbox's behavior makes it a good choice when working with dynamic content. An example of its dynamic behavior, based on the screen size, is when a flex container expands an interior element's width to fill available free space due to a large screen size. In contrast, it also can shrink an interior element's width to prevent overflow. It can even handle elements that have dynamic size values, like `%` and wrap elements when the parent container lacks enough space to fit all in one row or column (which can make it's one-dimensional structure look like a grid). 
 
-Flexbox's dynamic behavior also allows you to write code that changes orientation, direction, and proportion based on screensize or other factors. In contrast, using display properties of `block` or `inline` restrict you to top-bottom or left-right directions. This will make more sense when you see some examples.
+Flexbox's dynamic behavior also allows you to write code that changes orientation, direction, and proportion based on screen size or other factors. In contrast, using display properties of `block` or `inline` restrict you to top-bottom or left-right directions. This will make more sense when you see some examples.
 
 Flexbox style properties are divided into two main categories: (1) those for the container element; (2) those for the interior elements. 
 
