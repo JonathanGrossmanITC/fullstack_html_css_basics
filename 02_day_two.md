@@ -262,7 +262,7 @@ Other resources that might help are [MDN's Flexbox basics](https://developer.moz
 
 ## [CSS Grid](#css-grid)
 
-CSS Grid Layout is a grid-based layout system great for controlling your page layout by row and column. It provides an alternative to or supplement for working with the `position` style property and Flexbox. The `position` style property is useful for positioning individual elements and Flexbox is great for positioning in one dimension (column or row). Neither, however, is a great solution for positioning in two-dimensions. That's where Grid excels.
+CSS Grid Layout is a grid-based layout system that is great for controlling your page layout by row and column. It provides an alternative to or supplement for working with the `position` style property and Flexbox. The `position` style property is useful for positioning individual elements and Flexbox is great for positioning in one dimension (column or row). Neither, however, is a great solution for positioning in two-dimensions. That's where Grid excels.
 
 CSS Grid is a solution for positiong HTML elements in two-dimensions. In some ways Grid behaves like a table because you can layout the elements in columns and rows. Grid, however, is more dynamic and flexible than a table because in a Grid the container's child elements can overlap and layer. Hence, Grid offers the organization of a table but a flexibility similar to CSS positioned elements.
 
@@ -309,6 +309,7 @@ Here is the corresponding CSS:
 
 .box {
   align-items: center;
+  border: 1px solid black;
   color: darkorchid;
   display: flex;
   justify-content: center;
@@ -317,19 +318,16 @@ Here is the corresponding CSS:
 }
 
 .box-one {
-  border: 1px solid black;
   grid-column: 1;
   grid-row: 1;
 }
 
 .box-two {
-  border: 1px solid black;
   grid-column: 3 / 4;
   grid-row: 1 / 4;
 }
 
 .box-three {
-  border: 1px solid black;
   grid-column: 1 / 3;
   grid-row: 2 / 4;
 }
@@ -337,7 +335,7 @@ Here is the corresponding CSS:
 
 In the example above, the HTML element with the `.wrapper` class is the grid container. The `.wrapper` class defines the details for the columns, rows, and spacing of the grid. Here, the grid is 3 columns (`grid-template-columns: repeat(3, 1fr);`). See here for more about [`grid-template-columns`](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns). The rows are each 100px in height and width (`grid-auto-rows`) with a 10px space (`gap`) between them. The `.wrapper` class wraps other HTML elements.
 
-The classes `.box-one`, `.box-two`, and `.box-three` are assigned to HTML elements nested inside the `.wrapper` element. Each of those classes define by column and row where in the grid they are positioned. They can take up one square in the grid (i.e., an integer for each of the `grid-column` and `grid-row`), or they can take up multiple consecutive squares in the grid (i.e., a range of squares designated by `/` for one or both of `grid-column` and `grid-row` where the number after the `/` is not included). In the example, the `.box-one` class occupies a single square whereas the other classes occupy more. 
+The classes `.box-one`, `.box-two`, and `.box-three` are assigned to HTML elements nested inside the `.wrapper` element. Each of those classes define by column and row where in the grid they are positioned. They can take up one square in the grid (i.e., an integer for each of the `grid-column` and `grid-row`), or they can take up multiple consecutive squares in the grid (i.e., a range of squares designated by `/` for one or both of `grid-column` and `grid-row` where the number after the `/` is not included). In the example, the `.box-one` class occupies a single square whereas the other classes occupy more. The `box` class contains styles common to all three boxes.  
 
 Here is what it looks like:
 
@@ -352,7 +350,7 @@ These are [among the things to consider](https://developer.mozilla.org/en-US/doc
 
 You can use Grid and the `property` style element together. If you add to the Grid container the `position: relative` style property, then it serves as both the Grid container and also the *positioned* element for any elements inside it. The wrapped elements can now use Grid for sizing, spacing and general layout, and also use `position: absolute` in combination with `top`, `right`, `bottom`, and `left` to take elements out of the flow of the general layout. Check out [how to use Grid with absolute positioning](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Relationship_of_Grid_Layout#grid_and_absolutely_positioned_elements).
 
-Look at the example located in the [grid file](html/grid.html) so that you see the webpage and open the files in a Code Editor. In the files, you'll see code that creates a CSS grid. View how it looks in the browser. Play around with the code to change the grid layout and other styles. 
+Look at the example located in the [grid file](html/grid.html) so that you see the web page and open the files in a Code Editor. In the files, you'll see code that creates a CSS grid. View how it looks in the browser. Play around with the code to change the grid layout and other styles. 
 
 Is the grid responsive? How can you use the `position` style property and Flexbox in combination with Grid?
 
@@ -363,8 +361,6 @@ Try learning more about CSS Grid Layout on your own. MDN's article about the [re
 
 ## [Self study](#font-awesome) 
 
-Practice planning your page before actually writing the code. When planning, first it's important to pick whether you're writing your own custom CSS or using a framework. Although it's okay to occassionaly mix the two at times, you want to have one primary approach in that regard. Then, decide what the layout looks like on paper. 
+Practice planning your page before actually writing the code. First, draw out your design on paper or use online tools for web design. Next, think about how you will use HTML and CSS to generate the basic layout (ignoring the finer details like text, font-size, color, etc.). Think about whether and how you can use the Grid system with Flexbox and `position`. Think about which containers will hold which elements. Once you have a decent idea, start writing your code. Go slow. Step by step.  
 
-Next, think about how you will use HTML and CSS to generate the basic layout (ignoring the finer details like text, font-size, color, etc.). Think about whether and how you can use the Grid system with Flexbox and `position`. Think about which containers will hold which elements. Once you have a decent idea, start writing your code.
-
-Finally, on an unrelated note, check out [Font Awesome](#https://fontawesome.com/). It's a libarary of icons that you might find useful. Use what you learned about Bootstrap to install Font Awesome and use its documentation.
+Finally, on an unrelated note, check out [Font Awesome](#https://fontawesome.com/). It's a libarary of icons that you might find useful. This is good practice reading documentation to install and use third-party libraries.
