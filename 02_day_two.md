@@ -22,7 +22,7 @@ By the end of this lesson, you will have:
 
 ## [Position Style Property](#position-style-property)  
 
-The `position` style property allows you to control where an element is positioned on the page. The default value for `position` is `static`. When an element's `position` is `static`, this means that element renders in order it is written in your code. You can, however, override the default value to [change where the element](https://www.w3schools.com/cssref/pr_class_position.asp) appears on the page. Othe than `static`, your options for `position` are the values `absolute`, `relative`, `fixed`, and `sticky`. Here is an example of three classes:
+The `position` style property allows you to control where an element is positioned on the page. The default value for `position` is `static`. When an element's `position` is `static`, this means that element renders in order it is written in your code. You can, however, override the default value to [change where the element](https://www.w3schools.com/cssref/pr_class_position.asp) appears on the page. Other than `static`, your options for `position` are the values `absolute`, `relative`, `fixed`, and `sticky`. Here is an example of three classes:
 
 ```css
 .header-title {
@@ -198,7 +198,7 @@ In the modified example above, you added `align-items`, `height`, and `justify-c
 
 In addition to positioning *elements* inside a Flexbox container, you can use the technique above to position *text* horizontally and/or vertically inside an element. For instance, you could turn the `.button` class into a flex container with `align-items` and `justify-content` set to `center`. Then, the text inside the `.button` will appear in the middle of the button.
 
-Centering is just one way you can position elements or text within a flex container. You also can align items at the start or end of the container, space them evenly, add equal amount of space between them, and more. Plus, the parent container has many other Flexbox options, like `flex-direction` and `flex-wrap`. Check out [this great Flexbox guide](https://css-tricks.com/snippets/css/a-guide-to-flexbox/).
+Centering is just one way you can position elements or text within a flex container. You also can align items at the start or end of the container, space them evenly, add equal amounts of space between them, and more. Plus, the parent container has many other Flexbox options, like `flex-direction` and `flex-wrap`. Check out [this great Flexbox guide](https://css-tricks.com/snippets/css/a-guide-to-flexbox/).
 
 A note on `flex-direction` -- it flips which axis is the main and which is the cross axis. This results in `align-items` and `justify-content` controlling whichever axis it didn't control by default. By way of example, adding `flex-direction: column` to the `div` results in `align-items` controlling horizontal orientation of the child elements and `justify-content` controlling the vertical (the opposite of the default).
 
@@ -264,7 +264,7 @@ Other resources that might help are [MDN's Flexbox basics](https://developer.moz
 
 CSS Grid Layout is a grid-based layout system that is great for controlling your page layout by row and column. It provides an alternative to or supplement for working with the `position` style property and Flexbox. The `position` style property is useful for positioning individual elements and Flexbox is great for positioning in one dimension (column or row). Neither, however, is a great solution for positioning in two-dimensions. That's where Grid excels.
 
-CSS Grid is a solution for positiong HTML elements in two-dimensions. In some ways Grid behaves like a table because you can layout the elements in columns and rows. Grid, however, is more dynamic and flexible than a table because in a Grid the container's child elements can overlap and layer. Hence, Grid offers the organization of a table but a flexibility similar to CSS positioned elements.
+CSS Grid is a solution for positioning HTML elements in two-dimensions. In some ways Grid behaves like a table because you can layout the elements in columns and rows. Grid, however, is more dynamic and flexible than a table because in a Grid the container's child elements can overlap and layer. Hence, Grid offers the organization of a table but a flexibility similar to CSS positioned elements.
 
 When deciding whether to use Grid, Flexbox, or `position`, ask what you're trying to position. If you're positioning a single element, then `position` or Flexbox are good tools. If you're positioning multiple elements in a row *or* column, then Flexbox is a good option. If you're positioning multiple elements in rows *and* columns, the Grid is a good option (or maybe a Flexbox container that wraps).
 
@@ -335,7 +335,7 @@ Here is the corresponding CSS:
 
 In the example above, the HTML element with the `.wrapper` class is the grid container. The `.wrapper` class defines the details for the columns, rows, and spacing of the grid. Here, the grid is 3 columns (`grid-template-columns: repeat(3, 1fr);`). See here for more about [`grid-template-columns`](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns). The rows are each 100px in height and width (`grid-auto-rows`) with a 10px space (`gap`) between them. The `.wrapper` class wraps other HTML elements.
 
-The classes `.box-one`, `.box-two`, and `.box-three` are assigned to HTML elements nested inside the `.wrapper` element. Each of those classes define by column and row where in the grid they are positioned. They can take up one square in the grid (i.e., an integer for each of the `grid-column` and `grid-row`), or they can take up multiple consecutive squares in the grid (i.e., a range of squares designated by `/` for one or both of `grid-column` and `grid-row` where the number after the `/` is not included). In the example, the `.box-one` class occupies a single square whereas the other classes occupy more. The `box` class contains styles common to all three boxes.  
+The classes `.box-one`, `.box-two`, and `.box-three` are assigned to HTML elements nested inside the `.wrapper` element. Each of those classes defines by column and row where in the grid they are positioned. They can take up one square in the grid (i.e., an integer for each of the `grid-column` and `grid-row`), or they can take up multiple consecutive squares in the grid (i.e., a range of squares designated by `/` for one or both of `grid-column` and `grid-row` where the number after the `/` is not included). In the example, the `.box-one` class occupies a single square whereas the other classes occupy more. The `box` class contains styles common to all three boxes.  
 
 Here is what it looks like:
 
@@ -363,4 +363,4 @@ Try learning more about CSS Grid Layout on your own. MDN's article about the [re
 
 Practice planning your page before actually writing the code. First, draw out your design on paper or use online tools for web design. Next, think about how you will use HTML and CSS to generate the basic layout (ignoring the finer details like text, font-size, color, etc.). Think about whether and how you can use the Grid system with Flexbox and `position`. Think about which containers will hold which elements. Once you have a decent idea, start writing your code. Go slow. Step by step.  
 
-Finally, on an unrelated note, check out [Font Awesome](#https://fontawesome.com/). It's a libarary of icons that you might find useful. This is good practice reading documentation to install and use third-party libraries.
+Finally, on an unrelated note, check out [Font Awesome](#https://fontawesome.com/). It's a library of icons that you might find useful. This is good practice reading documentation to install and use third-party libraries.
