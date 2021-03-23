@@ -118,7 +118,7 @@ Flexbox style properties are divided into two main categories: (1) those for the
 
 Many powerful parent Flexbox properties exist. The main parent Flexbox property you should know is `display: flex`. Setting the `display` property to `flex` turns an HTML element into a Flexbox container. Without it, the other Flexbox properties won't work. 
 
-Inside a flex container, elements are aligned on the main axis. The main axis of a `div` is the `x-axis`, so the elements inside a `div` Flexbox container will appear next to each other by default. Note that the flex container influences only the elements and content directly inside it. Not the elements inside those elements. 
+Inside a flex container, elements are aligned on the main axis. The default main axis is the `x-axis`, so the elements inside a Flexbox container appear next to each other (not above and below) by default. Note that the flex container influences only the elements and content directly inside it. Not the elements inside those elements. 
 
 Here is an example of a CSS class with its `display` property set to `flex`.
 
@@ -137,7 +137,7 @@ Here is an example of a CSS class with its `display` property set to `flex`.
 }
 ```
 
-In this example, the `.buttons-wrapper` class has its `display` property set to `flex` and a `border` and `margin`. The `.button` class has a background color, border-radius, margin, and padding. Here is the corresponding HTML:
+In this example, the `.buttons-wrapper` class has its `display` property set to `flex` and a `border` and `margin`. The `.button` class has a background-color, border-radius, margin, and padding. Here is the corresponding HTML:
 
 ```html
 <!DOCTYPE html>
@@ -163,7 +163,8 @@ In this example, the `.buttons-wrapper` class has its `display` property set to 
   </body>
 </html>
 ```
-The relevant elements are the `div` with its `class` set to `"buttons-wrapper"` and also the `div` elements inside it with their `class` set to `"button"`. Notice that the three buttons are nested inside the buttons-wrapper. Here is how the example looks in the browser:
+
+One relevant element in the code above is the `div` with its `class` attribute set to `"buttons-wrapper"`. This is the flex container. The other relevant elements are those nested inside the flex container. Those are the `div` elements with their `class` attribute set to `"button"`. Here is how the example looks in the browser:  
 
 ![](images/flexbox_one_photo.png)
 
@@ -171,7 +172,7 @@ Notice that the flex container takes up the entire line and that the three inter
 
 Other display properties of the parent include `justify-content` and `align-items`. Used alone or in combination, you can position the interior elements within the flex container. For instance, you can center the interior elements either horizontally, vertically, or both. You also can position them all to the left, top, right, or bottom of the flex container.
 
-The `justify-content` property lets you position items along the main axis. The `align-items` property lets you position items along the cross axis. In the example above, the `x-axis` is the main axis and the `y-axis` is the cross axis. To center the elements along the `x-axis`, use `justify-content: center`. To center the elements along the `y-axis`, use `align-items: center`. Modifying the CSS might look like this:
+The `justify-content` property lets you position items along the main axis. The `align-items` property lets you position items along the cross axis. In the example above, the `x-axis` (horizontal) is the main axis and the `y-axis` (vertical) is the cross axis. To center the elements along the `x-axis`, use `justify-content: center`. To center the elements along the `y-axis`, use `align-items: center`. Modifying the CSS might look like this:
 
 ```css
 .buttons-wrapper {
@@ -190,15 +191,16 @@ The `justify-content` property lets you position items along the main axis. The 
   padding: 10px;
 }
 ```
+
 In the modified example above, you added `align-items`, `height`, and `justify-content` properties to the `.buttons-wrapper` class. The two flexbox properties are set to values that center the interior buttons and the `height` property is there to make it more obvious that the buttons are vertically centered. Here's what it looks like in the browser.
 
 ![](images/flexbox_two_photo.png)
 
 In addition to positioning *elements* inside a Flexbox container, you can use the technique above to position *text* horizontally and/or vertically inside an element. For instance, you could turn the `.button` class into a flex container with `align-items` and `justify-content` set to `center`. Then, the text inside the `.button` will appear in the middle of the button.
 
-Centering is just one way you can position elements or text within a flex container. You also can align items at the start or end of the container. Plus, the parent container has many other Flexbox options, like `flex-direction` and `flex-wrap`. Check out [this great Flexbox guide](https://css-tricks.com/snippets/css/a-guide-to-flexbox/).
+Centering is just one way you can position elements or text within a flex container. You also can align items at the start or end of the container, space them evenly, add equal amount of space between them, and more. Plus, the parent container has many other Flexbox options, like `flex-direction` and `flex-wrap`. Check out [this great Flexbox guide](https://css-tricks.com/snippets/css/a-guide-to-flexbox/).
 
-A note on `flex-direction` -- it flips which axis is the main and which is the cross access. This results in `align-items` and `justify-content` controlling whichever axis it didn't control by default instead of its default axis. In the example above, adding `flex-direction: column` to the `div` results in `align-items` controlling horizontal orientation of the child elements and `justify-content` controlling the vertical (the opposite of the default on a `div`).
+A note on `flex-direction` -- it flips which axis is the main and which is the cross axis. This results in `align-items` and `justify-content` controlling whichever axis it didn't control by default. By way of example, adding `flex-direction: column` to the `div` results in `align-items` controlling horizontal orientation of the child elements and `justify-content` controlling the vertical (the opposite of the default).
 
 ### Child Flexbox Properties
 
@@ -251,9 +253,9 @@ Here's what it looks like in the browser:
 
 See that the pause button (i.e., the one with the `.button-pause` class) takes up twice as much extra space as the other two. 
 
-Another common thing to do is set the child's `align-self` or `justify-self` properties to override the `align-items` or `justify-content` properties, respectively, as applied to that child. It essentially takes that child out of the normal flow. This is good, for example, if you want all elements centered in the flex container except for one of the elements. You can use`align-self` or `justify-self` on that child to position it.  
+Another common thing to do is set the child's `align-self` or `justify-self` properties to override the `align-items` or `justify-content` properties, respectively, *as applied to that child*. It essentially takes that child out of the normal flow. This is good, for example, if you want all elements centered in the flex container except for one of the elements. You can use `align-self` or `justify-self` on that child to position it.  
 
-There is a lot more you can do with child components CSS flex properties, like even set the order in which they align themselves. Again, check out [this great Flexbox guide](https://css-tricks.com/snippets/css/a-guide-to-flexbox/).
+This is just the start. You can do a lot more with child component CSS flex properties, like even set the order in which they align themselves. Again, check out [this great Flexbox guide](https://css-tricks.com/snippets/css/a-guide-to-flexbox/).
 
 Other resources that might help are [MDN's Flexbox basics](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox), [W3 Schools Flexbox](https://www.w3schools.com/css/css3_flexbox.asp), and [Flexbox Frogger](https://flexboxfroggy.com/).  
 
