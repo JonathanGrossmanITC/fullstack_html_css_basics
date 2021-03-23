@@ -1,8 +1,8 @@
 # Day 3: HTML and CSS Basics
 
-In this lesson, you learn about CSS animations and Bootstrap. Using CSS animations, you can enhance your designs and improve the user experience. For instance, you can create loaders, alerts, hover effects, and more. You'll learn two different ways to create CSS animations. One way is using **transitions** and the other is using **keyframes**.  
+In this lesson, you learn about CSS animations and Bootstrap. Using CSS animations, you can enhance your designs and improve the user experience. For instance, you can create loaders, alerts, hover effects, and more. You'll learn two different ways to create CSS animations. One way is using ***transitions*** and the other is using ***keyframes***.  
 
-Next, you learn about Bootstrap. It is a popular framework for applying CSS to your HTML elements. Rather than write your own CSS classes, you can import Bootstrap and use their CSS classes. Plus, by learning Bootstrap, you pracice working with external libraries for CSS.
+Next, you learn about Bootstrap. It is a popular framework for applying CSS to your HTML elements. Rather than write your own CSS classes, you can import Bootstrap and use their CSS classes. Plus, by learning Bootstrap, you practice working with external libraries for CSS.
 
 By the end of this lesson, you will have:
 
@@ -15,7 +15,7 @@ By the end of this lesson, you will have:
 
 CSS animations let you change the style of an HTML element, either when the page loads or triggered by an event on your web page, like a click, input, hover, or other event. By gradually changing an HTML element's design, location on the page, size, orientation, and more, you can animate parts of your page.
 
-Two important toolsets for CSS animations are transitions and keyframes. 
+Two important tool sets for CSS animations are transitions and keyframes. 
 
 ### Transitions
 
@@ -61,7 +61,7 @@ If instead of setting only the property and duration, you want to set three or a
 
 In the example above, the `.footer` class has one transition -- a `font-size 1s linear 2s`. This means that the `font-size` will change over the duration of 1 second using a linear timing function after a delay of 2 seconds. 
 
-Now that you know how to write the transition, you need to know how to trigger it. For the transition to start, you need to something to change the value of the `font-size`. One way to change the value of the font-size is to use a hover effect. Here is an example of the code:
+Now that you know how to write the transition, you need to know how to trigger it. For the transition to start, you need something that causes the value of the `font-size` to change. One way to change the value of the font-size is to use a hover effect. Here is an example of the code:
 
 ```css
 .footer:hover {
@@ -69,13 +69,13 @@ Now that you know how to write the transition, you need to know how to trigger i
 }
 ```
 
-In the example above, when the user hovers their mouse over the footer, the `font-size` will increase from `24px` to `28px` Rather than change size by its default behavior, the `font-size` will change according to the terms of your `transition`.
+In the example above, when the user hovers their mouse over the footer, the `font-size` will increase from `24px` (its value in the `.footer` class) to `28px` (its value in `.footer:hover`). Rather than change size by its default behavior, the `font-size` will change according to the terms of your `transition` when the user hovers over the footer.
 
-In addition to the hover effect, research which other [Pseudo elements](https://www.w3schools.com/css/css_pseudo_elements.asp) you could use with transitions. The [Using CSS Transitions page by MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions) has additional information and [CSS Tricks](https://css-tricks.com/almanac/properties/t/transition/) has some good examples. Also, check out this [list of some simple but powerful techniques](https://www.webdesignerdepot.com/2014/05/8-simple-css3-transitions-that-will-wow-your-users/) for using transitions to animate.
+In addition to the hover effect, research which other [Pseudo elements](https://www.w3schools.com/css/css_pseudo_elements.asp) you can use with transitions. The [Using CSS Transitions page by MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions) has additional information and [CSS Tricks](https://css-tricks.com/almanac/properties/t/transition/) has some good examples. Also, check out this [list of some simple but powerful techniques](https://www.webdesignerdepot.com/2014/05/8-simple-css3-transitions-that-will-wow-your-users/) for using transitions to animate.
 
 ### Keyframes
 
-Like you learned for transitions, use keyframes for CSS [animations](https://www.w3schools.com/css/css3_animations.asp) lets you change an element's style over a given time. With keyframes, you can change one or more style properties at a time. You use the `@keyframes` rule to name the animation and identify the styles that change and at which time points. Here is an example:
+Like you learned for transitions, using keyframes for CSS [animations](https://www.w3schools.com/css/css3_animations.asp) lets you change an element's style over a given time. With keyframes, you can change one or more style properties at a time. You use the `@keyframes` rule to name the animation and identify the styles that change and at which time points. Here is an example:
 
 ```css
 /* The animation code */
@@ -120,7 +120,7 @@ As you see in the example, the `@keyframes` block starts with `@keyframes`, foll
 
 In the example, at the beginning of the animation the font `color` is black and `font-size` is 24 pixels. Next, after 25% of the duration passes, the font `color` turns white and `font-size` becomes 30 pixels. Then, after 50% duration the font `color` turns blue and `font-size` becomes 24 pixels. Finally, the font `color` turns black and `font-size` returns to 24 pixels after 100% of the animation duration.
 
-The `@keyframes color-change` animation is bound to the the `.footer` class because the `animation-name` for the `.footer` is `color-change` (the name of the `@keyframes`). The animation will last 4 seconds because the `animation-duration` for the `.footer` is `4s`.
+The `@keyframes color-change` animation is bound to the `.footer` class because the `animation-name` for the `.footer` is `color-change` (the name of the `@keyframes`). The animation will last 4 seconds because the `animation-duration` for the `.footer` is `4s`.
 
 As an alternative to using percentages for time, you can use `from` and `to` for a gradual change between two values:
 
@@ -157,7 +157,7 @@ Look at the example located in the [animations file](html/animations.html) so th
 
 ## [Intro to Bootstrap](#intro-to-bootstrap)
 
-[Bootstrap](https://getbootstrap.com/) is an open-source framework for stlying mobile-first, responsive web applications. The framework provides pre-written CSS and JavaScript-based templates. For instance, Bootstrap has templates for navigation bars, alerts, buttons, and more. They've written the code, you just import and use it in yours.
+[Bootstrap](https://getbootstrap.com/) is an open-source framework for styling mobile-first, responsive web applications. The framework provides pre-written CSS and JavaScript-based templates. For instance, Bootstrap has templates for navigation bars, alerts, buttons, and more. They've written the code, you just import and use it in yours.
 
 ### Bootstrap is an example of a CSS Framework  
 
@@ -188,7 +188,7 @@ Also, put the following code at the bottom of your `body` tag in your HTML docum
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 ```
 
-The `link` is the Bootstrap stylesheet. It's like when you import your own stylesheet, but this is Bootstrap's. Imgaine how big the stylesheet is! The `script` tag is necessary because many Bootstrap templates require JavaScript. Accordingly, the `script` tag gives you access to the necessary Bootstrap JavaScript code. 
+The `link` is the Bootstrap stylesheet. It's like when you import your own stylesheet, but this is Bootstrap's. Imagine how big the stylesheet is! The `script` tag is necessary because many Bootstrap templates require JavaScript. Accordingly, the `script` tag gives you access to the necessary Bootstrap JavaScript code. 
 
 Bootstrap even provides example HTML for you to test. Here is an example using Option 1 from their example, with a Bootstrap button added for effect:
 
@@ -219,7 +219,7 @@ If you load this HTML file in the browser, you will see this:
 
 ![](images/bootstrap_install.png)
 
-Notice the title's font is styled, so is the button, and no errors in the console. No custom CSS. Simply, you import Bootstrap and use their classes. Here, the style comes from the Bootstrap default styling for `h1` and `button` tags, plus their styles from the `btn` and `btn-primary` classes. Instead of looking to CSS documentation and your own stylesheet to figure out what `h1`, `button`, `btn` and `btn-primary` are, you look at Bootstrap's documentation. Examples below.
+Notice the title's font is styled, so is the button, and no errors in the console. No custom CSS. Simply, you import Bootstrap and use their classes. Here, the style comes from the Bootstrap default styling for `h1` and `button` tags, plus their styles from the `btn` and `btn-primary` classes. Instead of looking at CSS documentation and your own stylesheet to figure out what `h1`, `button`, `btn` and `btn-primary` are, you look at Bootstrap's documentation. Examples below.
 
 This installation is a quick and effective approach to working with Bootstrap. Check out other ways to [install Bootstrap](https://getbootstrap.com/docs/5.0/getting-started/download/).
 
@@ -246,13 +246,13 @@ Bootstrap offers templates for page layouts. Bootstrap's layout system relies up
 </div>
 ```
 
-The example above highlights the HTML struture you need to use Bootstrap's layout system. It consists of a container element that wraps other HTML elements. The wrapped HTML elements serve as rows nested inside the container. The rows wrap HTML elements that serve as columns. Those nested columns can be from 1 to 12 units wide. In the example, they're 6 units wide, which means they're each as wide as half of the screen width.  
+The example above highlights the HTML structure you need to use Bootstrap's layout system. It consists of a container element that wraps other HTML elements. The wrapped HTML elements serve as rows nested inside the container. The rows wrap HTML elements that serve as columns. Those nested columns can be from 1 to 12 units wide. In the example, they're 6 units wide, which means they're each as wide as half of the screen width.  
 
-Let's look at this in more detail. Containers and are the outer-most wrapping element. They have built-in styling that center and horizontally pad your grid. Rows are elements nested directly inside containers and serve as containers for columns. Rows come with built-in values for `margin` and `padding`. You **must** use rows inside of a container. A good rule is that if you use a container also use a row directly inside it. The opposite is true too. If you use a row, wrap it with a container. 
+Let's look at this in more detail. Containers and are the outermost wrapping element. They have built-in styling that center and horizontally pad your grid. Rows are elements nested directly inside containers and serve as containers for columns. Rows come with built-in values for `margin` and `padding`. You **must** use rows inside of a container. A good rule is that if you use a container also use a row directly inside it. The opposite is true too. If you use a row, wrap it with a container. 
 
 Columns are nested inside rows. Each column is divided into 12 equal-sized units, and one HTML element can span any number of the 12 units. For instance, you could have a column that is 2 units wide, one that is 6 units wide, and another that is 2 units wide.  They would all fit in the same row because they're less than the 12 units available. As you see in the Bootstrap examples, the Bootstrap classes for columns (`.col`) allow you to say how many (e.g., `.col-6`) columns that HTML element occupies.
 
-For resposive web pages, use Bootstrap's built-in breakpoints to say how many columns an element should occupy depending upon the size of the browser. Bootstrap has six breakpoints. Extra small (`.col-xs-` or `.col-`), small (`.col-sm-`), medium (`.col-md-`), large (`.col-lg-`), extra large (`.col-xl-`), and extra extra large (`.col-xxl-`). The syntax means that the column at the designated screen size (and greater) will be the number of columns appearing after the second `-`. For instance, an element with (`.col-md-6`) will be 6 units wide at medium-sized screens and greater. Below that, it is 12 units because that is the default. 
+For responsive web pages, use Bootstrap's built-in breakpoints to say how many columns an element should occupy depending upon the size of the browser. Bootstrap has six breakpoints. Extra small (`.col-xs-` or `.col-`), small (`.col-sm-`), medium (`.col-md-`), large (`.col-lg-`), extra large (`.col-xl-`), and extra extra large (`.col-xxl-`). The syntax means that the column at the designated screen size (and greater) will be the number of columns appearing after the second `-`. For instance, an element with (`.col-md-6`) will be 6 units wide at medium-sized screens and greater. Below that, it is 12 units because that is the default. 
 
 You can add more than one breakpoint to an element. Here is an example of [mixing and matching](https://getbootstrap.com/docs/5.0/layout/grid/#mix-and-match):
 
@@ -285,9 +285,9 @@ Read more about the [Bootstrap grid options](https://getbootstrap.com/docs/5.0/l
 
 #### Content and Forms
 
-Bootstrap comes with templates that style the content on your webpage, like text, images, tables, forms, and more. The templates provide default built-in styles for HTML tag types, like the `body`, `h1` to `h6` tags, `form` and others. Simply using the HTML tag with Bootstrap installed will result in the Bootstap style appearing on the browser.  
+Bootstrap comes with template CSS classes that style the content on your webpage, like text, images, tables, forms, and more. The templates provide default built-in styles for HTML tag types, like the `body`, `h1` to `h6` tags, `form` and others. Simply using the HTML tag with Bootstrap installed will result in the Bootstrap style appearing on the browser.  
 
-Bootstrap also provides Bootstrap classes for additional content styling that supplement or override the Bootstrap built-in styling. Find those CSS class names in the Bootstrap documentation (links below), and apply those classes to specific HTML elements by add them to the element's `class` attribute.
+Bootstrap also provides template CSS classes for additional content styling that supplement or override the Bootstrap built-in styling. Find CSS class names in the Bootstrap documentation (links below), and apply those classes to specific HTML elements by add them to the element's `class` attribute.
 
 To learn more about Bootstrap content, check out their pages about [typography](https://getbootstrap.com/docs/5.0/content/typography/), [images](https://getbootstrap.com/docs/5.0/content/images/), [tables](https://getbootstrap.com/docs/5.0/content/tables/), and [figures](https://getbootstrap.com/docs/5.0/content/figures/). Be sure to look at the table on the right of each page in the links for content specific to that topic.
 
@@ -307,6 +307,6 @@ Finally, you can override Bootstrap styles by using your custom CSS. Let's say y
 
 ## [Self Study](#self-study)
 
-You'll most likely want to keep your animations to a minimum, as too many animations can make your page look amateur and also cause performance issues. You will, however, want to use animations at least sometimes. For instance, you'll want to animate loaders. Check out Code Pen's [loaders](https://codepen.io/topic/loader/picks) and other [animations](https://codepen.io/search/pens?q=animations&depth=title). Also consider the [W3Schools page on loaders](https://www.w3schools.com/howto/howto_css_loader.asp).
+You'll most likely want to keep your animations to a minimum, as too many animations can make your page look amateur and also cause performance issues. You will, however, want to use animations at least sometimes. For instance, you'll want to animate loaders. Check out CodePen's [loaders](https://codepen.io/topic/loader/picks) and other [animations](https://codepen.io/search/pens?q=animations&depth=title). Also consider the [W3Schools page on loaders](https://www.w3schools.com/howto/howto_css_loader.asp).
 
-Try to use a Code Pen animation in your own code or design your own!  
+Try to use a CodePen animation in your own code or design your own!  
