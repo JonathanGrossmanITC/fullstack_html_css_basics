@@ -157,17 +157,17 @@ Look at the example located in the [animations file](html/animations.html) so th
 
 ## [Intro to Bootstrap](#intro-to-bootstrap)
 
-### Bootstrap is a CSS Framework
-
 [Bootstrap](https://getbootstrap.com/) is an open-source framework for stlying mobile-first, responsive web applications. The framework provides pre-written CSS and JavaScript-based templates. For instance, Bootstrap has templates for navigation bars, alerts, buttons, and more. They've written the code, you just import and use it in yours.
+
+### Bootstrap is an example of a CSS Framework  
 
 Bootstrap is important for you to learn because it is the most popular open-source styling framework and also because much of what you learn using Bootstrap can help you learn how to use other style frameworks -- public and private. Accordingly, it is good that you practice using Bootstrap so that you're familiar working with style frameworks generally. 
 
-Anything you can do in plain CSS, Bootstrap has one or more pre-written templates that will do it for you (or at least get you close). For instance, you can use Bootstrap classes for [layout](https://getbootstrap.com/docs/4.5/layout/overview/), [content](https://getbootstrap.com/docs/4.5/content/reboot/), [forms](https://getbootstrap.com/docs/5.0/forms/overview/), [components](https://getbootstrap.com/docs/4.5/components/alerts/), and [more](https://getbootstrap.com/docs/4.5/utilities/borders/).
+Many of the things you can do in plain CSS, Bootstrap has one or more pre-written templates that will do it for you (or at least get you close). For instance, you can use Bootstrap classes for [layout](https://getbootstrap.com/docs/4.5/layout/overview/), [content](https://getbootstrap.com/docs/4.5/content/reboot/), [forms](https://getbootstrap.com/docs/5.0/forms/overview/), [components](https://getbootstrap.com/docs/4.5/components/alerts/), and [more](https://getbootstrap.com/docs/4.5/utilities/borders/).
 
 Whether to use Bootstrap, some other style framework, or your own custom CSS depends upon your situation. Sometimes your customer, team, or project will clearly require one over the others, in which case the decision is easy. Other times, you might get to choose. Consider what is most convenient for you in terms of writing clean code that is easy for you and others to maintain and understand.
 
-Regardless of your choice for styling, be consistent throughout your project with your styling patterns. Choose one approach as your predominant way of styling. For instance, if you're using Bootstrap, try to do as much as you can with it instead of half Bootstrap, half custom CSS. It can get confusing if you mix and match Bootstrap with custom CSS or another framework. Accordingly, try to avoid mixing your style approaches. If you have to do some mixing, do so in a way that is clear, predictable, and easy to understand.
+Regardless of your choice for styling, be consistent throughout your project with your styling patterns. Choose one approach as your predominant way of styling. For instance, if you're using Bootstrap, try to do as much as you can with it instead of half Bootstrap, half custom CSS. It can get confusing if you mix and match Bootstrap with custom CSS or another framework. Accordingly, avoid or minimize the mixing of different style approaches. If you have to do some mixing, do so in a way that is clear, predictable, and easy to understand.  
 
 ### Installing 
 
@@ -223,17 +223,21 @@ Notice the title's font is styled, so is the button, and no errors in the consol
 
 This installation is a quick and effective approach to working with Bootstrap. Check out other ways to [install Bootstrap](https://getbootstrap.com/docs/5.0/getting-started/download/).
 
-### Examples Using Bootstrap
+### Examples Using Bootstrap. 
+
+Among the many things you can use Bootstrap for are layout, content and forms, components, and utilities. They have ready-to-use CSS classes for you to use.  
 
 #### Layout
 
-Bootstrap offers tempates for your page layout. Bootstrap's layout relies upon [containers](https://getbootstrap.com/docs/5.0/layout/containers/), rows, and [columns](https://getbootstrap.com/docs/5.0/layout/columns/) to create a [grid-like layout](https://getbootstrap.com/docs/5.0/layout/grid/), and [breakpoints](https://getbootstrap.com/docs/5.0/layout/breakpoints/) to adapt your layout in response to a particular viewport or device size. It is similar to Grid and flexbox, but it has its own syntax and quirks.
+Bootstrap offers templates for page layouts. Bootstrap's layout system relies upon [containers](https://getbootstrap.com/docs/5.0/layout/containers/), rows, and [columns](https://getbootstrap.com/docs/5.0/layout/columns/) to create a [grid-like layout](https://getbootstrap.com/docs/5.0/layout/grid/), and [breakpoints](https://getbootstrap.com/docs/5.0/layout/breakpoints/) to adapt your layout in response to a particular viewport or device size. It is similar to Grid and Flexbox, but it has its own syntax and quirks.
+
+To use Bootstraps layout system, you need to know that it consists of a container element that wraps HTML elements. The wrapped HTML elements serve as rows nested inside the container. The rows have columns nested inside them. 
 
 Containers center and horizontally pad your grid and are the outer-most wrapping element. Rows are elements nested directly inside containers and serve as containers for columns. Rows come with built-in values for `margin` and `padding`. You **must** use rows inside of a container. A good rule, is that if you use a container also use a row directly inside it, and if you use a row, wrap it with a container. 
 
-Columns are nested inside rows. Each row has 12 columns. An element can span any number of the 12 rows. As you see in the Bootstrap examples, the Bootstrap classes for columns (`.col`) allow you to say how many (e.g., `.col-6`).
+Columns are nested inside rows. Each row has 12 columns. An element can span any number of the 12 rows. As you see in the Bootstrap examples, the Bootstrap classes for columns (`.col`) allow you to say how many (e.g., `.col-6`) columns that HTML element occupies.
 
-Use Bootstrap's built-in breakpoints to say how many columns an element should occupy depending upon the size of the browser. Bootstrap has six breakpoints. Extra small (`.col-xs-` or `.col-`), small (`.col-sm-`), medium (`.col-md-`), large (`.col-lg-`), extra large (`.col-xl-`), and extra extra large (`.col-xxl-`). The syntax means that the column at whichever designated screensize (and greater) will be the number of columns appearing after the second `-`. For instance, an element with (`.col-md-6`) will be 6 columns wide at medium-sized screensizes and greater. Below that, it is 12 columns because that is the default. 
+Use Bootstrap's built-in breakpoints to say how many columns an element should occupy depending upon the size of the browser. Bootstrap has six breakpoints. Extra small (`.col-xs-` or `.col-`), small (`.col-sm-`), medium (`.col-md-`), large (`.col-lg-`), extra large (`.col-xl-`), and extra extra large (`.col-xxl-`). The syntax means that the column at whichever designated screen size (and greater) will be the number of columns appearing after the second `-`. For instance, an element with (`.col-md-6`) will be 6 columns wide at medium-sized screens and greater. Below that, it is 12 columns because that is the default. 
 
 You can add more than one breakpoint to an element. Here is an example of [mixing and matching](https://getbootstrap.com/docs/5.0/layout/grid/#mix-and-match):
 
