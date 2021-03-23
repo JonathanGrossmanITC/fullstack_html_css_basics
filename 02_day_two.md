@@ -20,9 +20,9 @@ By the end of this lesson, you will have:
 - Self study suggestions for building a layout and working with font awesome
 
 
-## [Position Style Property](#position-style-property)  
+## [`position` Style Property](#position-style-property)  
 
-The `position` style property allows you to control where an element is positioned on the page. The default value for `position` is `static`. When an element's `position` is `static`, this means that element renders in order it is written in your code. You can, however, override the default value to [change where the element](https://www.w3schools.com/cssref/pr_class_position.asp) appears on the page. Other than `static`, your options for `position` are the values `absolute`, `relative`, `fixed`, and `sticky`. Here is an example of three classes:
+The `position` style property allows you to control where an element is positioned on the page. An HTML element's default value for `position` is `static`. When an element's `position` is `static`, this means the element renders in the order it is written in your code. You can, however, override the default value to [change where the element](https://www.w3schools.com/cssref/pr_class_position.asp) appears on the page. Other than `static`, your options for `position` are the values `absolute`, `relative`, `fixed`, and `sticky`. Here is an example of several CSS classes:
 
 ```css
 .header-title {
@@ -44,7 +44,9 @@ The `position` style property allows you to control where an element is position
 }
 ```
 
-In the example above, the top two classes (`.header-title` and `.header-subtitle`) are `position: static`. This is the default for both, so you don't need to explicitly declare it. The only difference between the two is that one explicitly declares `position: static` and the other doesn't. Explicitly declaring the default value doesn't change it, and therefore both are `position: static`. The next class (`.page-wrapper`) is `position: relative` because it overrides the default by explicitly declaring `position: relative`.The last class (`.footer`) is `position: absolute` because it overrides the default by explicitly declaring `position: absolute`.
+In the example above, the top two classes (`.header-title` and `.header-subtitle`) are `position: static`. This is the default for both, so you don't need to explicitly declare it. The only difference between the two is that one explicitly declares `position: static` and the other doesn't. Explicitly declaring the default value doesn't change it, and therefore both are `position: static`. 
+
+The next class (`.page-wrapper`) is `position: relative`. It overrides the default by explicitly declaring `position: relative`. The last class (`.footer`) is `position: absolute`. It overrides the default by explicitly declaring `position: absolute`.
 
 Often used in combination with the `position` property are the properties `top`, `right`, `bottom`, and `left`. Their values are in pixels, like `top: 10px`, and are used with `position` to place HTML elements on the page. The properties `top`, `right`, `bottom`, and `left` influence an element *only if* the element is ***positioned***. An element is positioned only if its `position` is anything other than `static`.
 
@@ -52,7 +54,7 @@ Using `top`, `right`, `bottom`, and `left` in combination with the `position` va
 
 When `position` has its default value of `static`, if you set `top`, `right`, `bottom`, and `left`, the `position: static` element responds to the document, not to its parent. Accordingly, statically positioned elements aren't influenced by `top`, `right`, `bottom`, and `left` values.
 
-In contrast, the `absolute` value positions an element relative to its first *positioned* ancestor element. Note the requirement of a *positioned* ancestor. This means the `absolute` element needs to have an ancestor element that also has a `position` property set. For instance, if the parent element has `position: relative`, then the `position: absolute` child element will have properties for `top`, `right`, `bottom`, `left` that refer to the parent element.
+In contrast, the `absolute` value positions an element relative to its first *positioned* ancestor element. Note the requirement of a *positioned* ancestor. This means the `absolute` element needs to have an ancestor element that also has a `position` property set. For instance, if the parent element has `position: relative`, then the `position: absolute` child element will have properties for `top`, `right`, `bottom`, and `left` that refer to the parent element.
 
 ```css
 .section-wrapper {
@@ -107,6 +109,18 @@ For more examples and resources, visit [W3 Schools](https://www.w3schools.com/cs
 You just learned how to position a single HTML element using the `position` property. Now it's time to learn about Flexbox. This collection of properties provides an efficient way to organize multiple HTML elements on a webpage in a column ***or*** row. In other words, it helps your layout HTML elements in one dimension. 
 
 Flexbox isn't just one style property. Rather, it consists of a collection of CSS style properties that you can use in various combinations. When using Flexbox, you turn one element into a flex container. The elements in that container will then display flex behavior, meaning that the container element can adjust the height, width, direction, and order of the elements inside it based on the space available in the container and other considerations. 
+
+Here is an example of what your HTML file might look like.
+
+```html
+<div class="flex-parent">
+   <div class="flex-child">Start</div>
+   <div class="flex-child">Pause</div>
+   <div class="flex-child">End</div>
+</div>
+```
+
+In the example, `flex-parent` element is the flex container, and the `flex-child` elements are its children and they display flex behavior, like space themselve evenly, arrange in a vertical column, or adjust their size based on the content (just to name a few examples).
 
 Flexbox's behavior makes it a good choice when working with dynamic content. An example of its dynamic behavior, based on the screen size, is when a flex container expands an interior element's width to fill available free space due to a large screen size. In contrast, it also can shrink an interior element's width to prevent overflow. It can even handle elements that have dynamic size values, like `%` and wrap elements when the parent container lacks enough space to fit all in one row or column (which can make it's one-dimensional structure look like a grid). 
 
