@@ -1,6 +1,8 @@
 # Day 3: HTML and CSS Basics
 
-In this lesson, you learn about CSS animations and Bootstrap. Using CSS animations, you can enhance your designs and improve the user experience. For instance, you can create loaders, alerts, hover effects, and more. You'll learn two different ways to create CSS animations. One way is using **transitions** and the other is using **keyframes**. Next, you learn about Bootstrap. It is a popular framework for applying CSS to your HTML elements. Rather than write your own CSS classes, you can import Bootstrap and use their CSS classes. Plus, by learning Bootstrap, you pracice working with external libraries for CSS.
+In this lesson, you learn about CSS animations and Bootstrap. Using CSS animations, you can enhance your designs and improve the user experience. For instance, you can create loaders, alerts, hover effects, and more. You'll learn two different ways to create CSS animations. One way is using **transitions** and the other is using **keyframes**.  
+
+Next, you learn about Bootstrap. It is a popular framework for applying CSS to your HTML elements. Rather than write your own CSS classes, you can import Bootstrap and use their CSS classes. Plus, by learning Bootstrap, you pracice working with external libraries for CSS.
 
 By the end of this lesson, you will have:
 
@@ -11,7 +13,7 @@ By the end of this lesson, you will have:
 
 ## [CSS Animations](#css-animations)  
 
-CSS animations let you change the style of an HTML element. By gradually changing an element's location on the page, size, orientation, and more, you can animate parts of your page.
+CSS animations let you change the style of an HTML element, either when the page loads or triggered by an event on your web page, like a click, input, hover, or other event. By gradually changing an HTML element's design, location on the page, size, orientation, and more, you can animate parts of your page.
 
 Two important toolsets for CSS animations are transitions and keyframes. 
 
@@ -21,7 +23,7 @@ A [transition](https://www.w3schools.com/css/css3_transitions.asp) gradually cha
 
 The `transition-property` defines which CSS property the transition applies to. The `transition-duration`	defines how long the transition will last.  The `transition-timing-function` defines the speed curve of the transition. Check out the [Cubic Bezier site](https://cubic-bezier.com/#) to learn more. The `transition-delay` defines any delay in seconds before the transition occurs.
 
-You can set one or more of the transition properties all at once using the `transition` property. The order of the values are `transition: <transition-property>, <transition-duration>, <transition-timing-function>, <transition-delay>`. Here is an example of setting the `transition-property` and `transition-duration` using the `transition` property:
+You can set one or more of the transition properties all at once using the `transition` property. For instance, the following sets the `transition-property` as `font-size` and `transition-duration` to 1 second and ignores the other two properties: `transition: font-size 1s`. The order of the values are `transition: <transition-property>, <transition-duration>, <transition-timing-function>, <transition-delay>`. Here is the example in code of setting the `transition-property` and `transition-duration` using the `transition` property:
 
 
 ```css
@@ -73,7 +75,7 @@ In addition to the hover effect, research which other [Pseudo elements](https://
 
 ### Keyframes
 
-CSS [animations](https://www.w3schools.com/css/css3_animations.asp) change an element's style over a given time. In an animation , you can change one or more style properties at a time. You use the `@keyframes` rule to name the animation and identify the styles that change and at which time points. Here is an example:
+Like you learned for transitions, use keyframes for CSS [animations](https://www.w3schools.com/css/css3_animations.asp) lets you change an element's style over a given time. With keyframes, you can change one or more style properties at a time. You use the `@keyframes` rule to name the animation and identify the styles that change and at which time points. Here is an example:
 
 ```css
 /* The animation code */
@@ -114,7 +116,7 @@ To help explain the syntax for an animation, here is an example of an animation:
 }
 ```
 
-As you see in the example, the `@keyframes` block starts with `@keyframes`, followed by the name of the animation, and then `{ }`. Inside are pairs of a `%` and an object of key:value pairs. The `%` corresponds to the point in time of the `animation-duration` and the key:value pairs are CSS styles. In this example, the animation will change the element's `color` and `font-size` at each of 0%, 25%, 50%, and 100% of the `animation-duration` of 4 seconds. 
+As you see in the example, the `@keyframes` block starts with `@keyframes`, followed by the name of the animation, and then `{ }`. Inside are pairs of a `%` and an object of key:value pairs. The `%` corresponds to the point in time of the `animation-duration` and the key:value pairs are CSS styles for that block of time. In this example, the animation will change the element's `color` and `font-size` at each of 0%, 25%, 50%, and 100% of the `animation-duration` of 4 seconds. 
 
 In the example, at the beginning of the animation the font `color` is black and `font-size` is 24 pixels. Next, after 25% of the duration passes, the font `color` turns white and `font-size` becomes 30 pixels. Then, after 50% duration the font `color` turns blue and `font-size` becomes 24 pixels. Finally, the font `color` turns black and `font-size` returns to 24 pixels after 100% of the animation duration.
 
@@ -146,11 +148,11 @@ You can set one or more of the animation properties all at once using the `anima
 }
 ```
 
-In the example above, the animation is the `@keyframes` named `change-color `, and it will last 5 seconds, have a linear timing function, it will be delayed for 2 seconds, it will run infinitely, and it will alternate directions.
+In the example above, the animation is the `@keyframes` named `change-color`, and it will last 5 seconds, have a linear timing function, it will be delayed for 2 seconds, it will run infinitely, and it will alternate directions.
 
 ### Examples of Animations
 
-Look at the example located in the [animations file](html/animations.html) so that you see the webpage and open the files in a Code Editor. In the files, you see code that animates the page using keyframes and transitions. Play around with the code to understand how the durations and delays interact with one another. How can you change the CSS properties to improve this? How can you use animations to make loaders and alerts? Add your own responsive features to this start and view your new and improved version in the browser as a webpage!
+Look at the example located in the [animations file](html/animations.html) so that you see the web page and open the files in a Code Editor. In the files, you see code that animates the page using keyframes and transitions. Play around with the code to understand how the durations and delays interact with one another. How can you change the CSS properties to improve this? How can you use animations to make loaders and alerts? Add your own responsive features to this start and view your new and improved version in the browser as a web page!
 
 
 ## [Intro to Bootstrap](#intro-to-bootstrap)
