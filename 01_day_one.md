@@ -1,10 +1,10 @@
 # Day 1: HTML and CSS Basics
 
-HTML, CSS, and JavaScript are the three main languages required for building the frontend of a web application. HTML and CSS are used primarily to organize and style the contents of a webpage. In contrast, JavaScript is used to provide functionality to your page. For instance, using JavaScript, you can send the values entered into a form to a server or change the information shown on the page based on what the user clicks.  
+HTML, CSS, and JavaScript are the three main languages required for building the frontend of a web application. HTML and CSS are used primarily to organize and style the contents of a web page. In contrast, JavaScript is used to provide functionality to your page. For instance, using JavaScript, you can send the values entered into a form to a server or change the information shown on the page based on what the user clicks.  
 
 Read this lesson and look at the links before the first class. In class, you will be expected to be familiar with the topics in this document. You will watch a live coding session that uses the concepts discussed in here. In that live coding session, we will set up our frontend web application and begin building our mobile-first design.  
 
-We will start the class by building the folders and files the browser needs to load our web application. In doing this, we will do a quick refresher on what HTML and CSS are. We will talk about how when a user opens a browser on their computer, the browser requests the HTML, CSS, JavaScript, and media files the browser needs to build the webpage (i.e., the source code). The browser uses the source code and other files to assemble the webpage for the user to see and interact with.
+We will start the class by building the folders and files the browser needs to load our web application. In doing this, we will do a quick refresher on what HTML and CSS are. We will talk about how when a user opens a browser on their computer, the browser requests the HTML, CSS, JavaScript, and media files the browser needs to build the web page (i.e., the source code). The browser uses the source code and other files to assemble the web page for the user to see and interact with.
 
 Here in this lesson, you start by studying the very basics of HTML and CSS. This will help you build your project folder and connect your HTMl, CSS, and JavaScript files. Next, you'll learn about using external stylesheets and CSS selectors. Then, you'll learn about a mobile-first approach to web development. This mobile-first approach will help you think about how to approach structuring your code as your start your project.  
 
@@ -21,8 +21,8 @@ By the end of this lesson, you will have:
 
 HTML and CSS are languages that instruct the browser how to display the contents on the page. HTML defines the **elements** of the page. The elements of the page consist of text, images, videos, content blocks, and more. HTML and CSS together define the **layout** and **style** of the elements. The layout is how the elements are organized on the page. The element styles include the size, spacing, color, font, and more.  
 
-### A webpage is a document
-You're probably familiar with working in a Word Doc, Google Doc, Notepad, and .txt files. Similar to those, and HTML file is just a document for storing information. Try this. Make a file on your desktop called `document.html`. Open it and write the sentence "This is just a document". Save the file. Open a browser and drag your `document.html` file to the brower. What do you see in the browser?  
+### A web page is a document
+You're probably familiar with working in a Word Doc, Google Doc, Notepad, and .txt files. Similar to those, and HTML file is just a document for storing information. Try this. Make a file on your desktop called `document.html`. Open it and write the sentence "This is just a document". Save the file. Open a browser and drag your `document.html` file to the browser. What do you see in the browser?  
 
 Pretty cool, but wouldn't it be better if you could add some style to the text? You could change its color, position, size, and more. Using HTML and CSS syntax, you can tell the browser how to do those things. That's one of the things that makes HTML and CSS so special is that browsers know how to interpret those kinds of files and display them to the user.  
 
@@ -49,13 +49,13 @@ Before going further, here is an example of a basic HTML document structure, whi
 </html>
 ```
 
-The example above uses multiple HTML tags. At the top, the `<!DOCTYPE html>` tells the browser that this file is an HTML file. Next, the `html` tag is the main element that wraps all the other HTML tags. The `head` tag holds meta data about the page. Here, the meta data in the `head` tags sets the title that you see in the browser's tab at the top. Look for it in the image of the example below. Other meta data, however, is usually just for the browser to read, not for the user to see. An example is a link to a stylesheet, which you'll see below in the CSS section.  
+The example above uses multiple HTML tags. At the top, the `<!DOCTYPE html>` tells the browser that this file is an HTML file. Next, the `html` tag is the main element that wraps all the other HTML tags. The `head` tag holds metadata about the page. Here, the metadata in the `head` tags sets the title that you see in the browser's tab at the top. Look for it in the image of the example below. Other metadata, however, is usually just for the browser to read, not for the user to see. An example is a link to a stylesheet, which you'll see below in the CSS section.  
 
 The `body` tag holds all the content for the page. It wraps all the page's content-holding elements and indicates to the browser that this is where the content is located.  
 
 Inside the body are the content-holding tags. In this example, the content is text. You see `h1`, `h2`, and `h4` tags, each of which come with different default font styling. You also see `p`, `div`, and `span` tags, each of which comes with its own default styling. More on this later. The bottom line is that inside the `body` element is where you'll put the content that the user sees in the browser.  
 
-To see this HTML in your own broswer, download this repository and drag to the browser the [hello html file](html/hello.html). It should look like this:
+To see this HTML in your own browser, download this repository and drag to the browser the [hello html file](html/hello.html). It should look like this:
 
 ![](images/hello_html_photo.png). 
 
@@ -63,7 +63,7 @@ Finding [HTML examples](https://www.w3schools.com/html/html_examples.asp) online
 
 As the example demonstrates, a website is really just a document. You can display the document either in the browser window or as the HTML source. When viewed in the browser, you see the page content organized and styled for the end user. When viewed as source code, you see all the HTML code. Regardless, it is the same document.  
 
-The webpage document relies upon other documents for content, style, and functionality. The HTML document relies upon CSS documents, images, and other files for conetent and style. It relies upon JavaScript files for functionality.  
+The web page document relies upon other documents for content, style, and functionality. The HTML document relies upon CSS documents, images, and other files for content and style. It relies upon JavaScript files for functionality.  
 
 In your project folder, organize your files similar to the structure here in this repository.
 
@@ -93,11 +93,11 @@ To help visualize the DOM and develop your code, you can use the inspector in yo
 
 ![](images/inspector.png)
 
-As you see in the example, for any website you can right click on any part of the screen, and click **"Inspect"** in the popup menu. The developer tools will open, in which you find the **Elements** tab. Inside that tab, you can see a visual representation of your DOM object based on your HTML document's source code. Specifically, among other things, you can see the HTML and CSS of the document. You can even modify the DOM right here in your Elements tab. For instance, you can change the style properties or the text. When modifying the code in the Elements tab, you're only modifying it for that browswer session. It's not saving your modifications to your HTML file. Simply refreshing the browser will revert the webpage back to pre-modification. This is, however, a common way to test your changes before actually making those changes in your code.  
+As you see in the example, for any website you can right click on any part of the screen, and click **"Inspect"** in the popup menu. The developer tools will open, in which you find the **Elements** tab. Inside that tab, you can see a visual representation of your DOM object based on your HTML document's source code. Specifically, among other things, you can see the HTML and CSS of the document. You can even modify the DOM right here in your Elements tab. For instance, you can change the style properties or the text. When modifying the code in the Elements tab, you're only modifying it for that browser session. It's not saving your modifications to your HTML file. Simply refreshing the browser will revert the web page back to pre-modification. This is, however, a common way to test your changes before actually making those changes in your code.  
 
-Note that the browser source code is public. When you load a webpage, the files on which the browser loads the page are accessible in the developer tools. Look at the **Sources** and **Network** tabs. What do you see? Because frontend files are public, when using private information in your code, like access tokens and passwords, you should not put them in your frontend source code. You learn more about this later in the course.
+Note that the browser source code is public. When you load a web page, the files on which the browser loads the page are accessible in the developer tools. Look at the **Sources** and **Network** tabs. What do you see? Because frontend files are public, when using private information in your code, like access tokens and passwords, you should not put them in your frontend source code. You learn more about this later in the course.
 
-As a developer, you oftentimes use the Elements tab in the inspector to better understand how your HTML is organized, to debug CSS issues, and to try out new styles before writing your code. When you start writing JavaScript and server-side code, you use the inspector for much more, too.
+As a developer, you often use the Elements tab in the inspector to better understand how your HTML is organized, to debug CSS issues, and to try out new styles before writing your code. When you start writing JavaScript and server-side code, you use the inspector for much more, too.
 
 ### Tag Boundaries
 
@@ -107,7 +107,7 @@ All HTML tags have boundaries -- a beginning and an end. Many HTML tags declare 
 <div>This is some text in a div element.</div>
 ```
 
-In the example above, you have opening and closing `div` tags with text between. The webpage will display the text but not the `div` tags. Rather, the browser uses the `div` tags to format and style the page _behind the scenes_.
+In the example above, you have opening and closing `div` tags with text between. The web page will display the text but not the `div` tags. Rather, the browser uses the `div` tags to format and style the page _behind the scenes_.
 
 Although many elements require both opening and closing tags, some elements define their boundaries using a self-closing tag. A self-closing tag consists of only one tag, which both opens and closes the element. A self-closing tag starts with `<` and ends with `/>`, like this `<img />`. The content is declared as an **attribute** of the tag. Here is an example:
 
@@ -115,7 +115,7 @@ Although many elements require both opening and closing tags, some elements defi
 <img src="./images/image.jpg" />
 ```
 
-In the example above, you have a self-closing `img` tag that sets its source attribute (`src`) as `./images/image.jpg`, which means it is showing `image.jpg` as its content on the webpage. In the browser, you will see the image but not the `img` tag. Instead, the `img` tag tells the browser that this is an image.   
+In the example above, you have a self-closing `img` tag that sets its source attribute (`src`) as `./images/image.jpg`, which means it is showing `image.jpg` as its content on the web page. In the browser, you will see the image but not the `img` tag. Instead, the `img` tag tells the browser that this is an image.   
 
 ### Attributes
 
@@ -137,15 +137,15 @@ In contrast, the `span` tag has no default `display` property, which makes its `
 
 Although the preceding examples focus on built-in `display` properties, HTML tags can have other default style properties. For instance, the `h1` - `h6` tags each have their own unique default `font-size`. The `a` has a built-in `text-decoration` property set to `underline`. Here is a [list of HTML elements](https://www.w3schools.com/TAGS/default.ASP). Click on each one to learn about its default style properties. 
 
-As demonstrated above, some of the content-holidng HTML tags you should pay special attention are `div` (a generic tag that holds other tags, used for structuring sections, blocks, etc), `h1`- `h6` (hold text and present it as header text), `p` (holds text and presents it as a paragraph), `img` (presents an image), and `a` (an anchor tag, which creates links and it holds text).
+As demonstrated above, some of the content-holding HTML tags you should pay special attention are `div` (a generic tag that holds other tags, used for structuring sections, blocks, etc), `h1`- `h6` (hold text and present it as header text), `p` (holds text and presents it as a paragraph), `img` (presents an image), and `a` (an anchor tag, which creates links and it holds text).
 
-Although HTML tags come with some default style properties, most often you won't rely solely upon the built-in styles for organizing and styling your webpages. Rather, you will write your own CSS styles that either supplement or override the default styles that come with each HTML tag. Therefore, aside from special cases like the `html`, `head`, and `body` tags, you need to _not_ put too much emphasis on choosing the _perfect_ HTML tag for each situation. Rather, just know that each HTML element has built-in styling that may serve you in different situations and that you can override whatever styles come with the tag.
+Although HTML tags come with some default style properties, most often you won't rely solely upon the built-in styles for organizing and styling your web pages. Rather, you will write your own CSS styles that either supplement or override the default styles that come with each HTML tag. Therefore, aside from special cases like the `html`, `head`, and `body` tags, you need to _not_ put too much emphasis on choosing the _perfect_ HTML tag for each situation. Rather, just know that each HTML element has built-in styling that may serve you in different situations and that you can override whatever styles come with the tag.
 
 ### CSS Styling
 
 Cascading Style Sheets (CSS) is the language used for defining the organization and style of the content-holding elements in an HTML document. You can add CSS to your HTML tags by writing your own CSS or using a CSS framework.
 
-When writing your own CSS, it is oftentimes best to use an **external stylesheet**. This is when you write your CSS inside a CSS file and import that file into your HTML file. Writing your CSS in a CSS file instead of your HTML file will lead to cleaner, more reusable, and more efficient code.
+When writing your own CSS, it is often best to use an **external stylesheet**. This is when you write your CSS inside a CSS file and import that file into your HTML file. Writing your CSS in a CSS file instead of your HTML file will lead to cleaner, more reusable, and more efficient code.
 
 Other approaches for writing your own CSS exist too, like writing your CSS inside a `script` tag nested in the `head` tag. You also can write the CSS in the HTML tags themselves using the `style` attribute. You will see examples of these two approaches out in the wild. Regardless of whichever approach you use, it is a good practice to be consistent in your code. That way someone else (or the future you) doesn't have to look in too many places to find where the style properties are defined for a specific element. That becomes hard if styles are not located in predictable places. So, try not to mix different patterns for styling your app.
 
@@ -155,7 +155,7 @@ When using a CSS framework, you will import the framework into your HTML file an
 
 ### CSS File  
 
-When writing your own CSS in an external file, you first should create in your project's root folder a subfolder names `css`. Inside that subfolder, create a stylesheet file, which is a file ending in `.css`. Typically, for your main HTML page, you should name the stylesheet `styles.css` because that's the convention. However, you can name it whatever you want.
+When writing your own CSS in an external file, you first should create in your project's root folder a subfolder named `css`. Inside that subfolder, create a stylesheet file, which is a file ending in `.css`. Typically, for your main HTML page, you should name the stylesheet `styles.css` because that's the convention. However, you can name it whatever you want.
 
 Inside your HTML file, you need to import the stylesheet. Do this in the `head` tag using a `link` tag.
 
@@ -167,13 +167,13 @@ Inside your HTML file, you need to import the stylesheet. Do this in the `head` 
 
 In the code above, the `head` tag wraps the `link` tag. The `link` tag has two attributes, `rel` and `href`. The `rel` attribute creates a relationship between the HTML file and the `href` of the `link` tag. The `href` of the link tag, here, is the relative pathname of the stylesheet. In the `href`, the `..` tells the browser to look not in the current folder, but the folder that the current folder lives in; the `css` means that once it is in the folder holding the current folder, it should look for the `css` folder; the `styles.css` tells the browser which file in the `css` folder to import.  
 
-Note that the `link` tag links documents and is used inside the `head` tag. This is different from the `a` tag, which is used inside the `body` for linking to other webpages. Although conceptually not confusing, the naming can sometimes be.  
+Note that the `link` tag links documents and is used inside the `head` tag. This is different from the `a` tag, which is used inside the `body` for linking to other web pages. Although conceptually not confusing, the naming can sometimes be.  
 
-Because the browser reads the HTML file from top to bottom, when reading the HTML file, the browser imports and reads the CSS file before reading the HTML body. This means that the CSS code that you write will essentailly be inside your HTML file, and you can use the CSS class in the `.css` file to style your HTML elements.
+Because the browser reads the HTML file from top to bottom, when reading the HTML file, the browser imports and reads the CSS file before reading the HTML body. This means that the CSS code that you write will essentially be inside your HTML file, and you can use the CSS class in the `.css` file to style your HTML elements.
 
-To test whether you properly improted the CSS file into your HTML, you should write a CSS class. When writing a CSS class that applies to all elements of a certain tag type, first you need to declare which HTML element type it applies to, for instance, `h1`, `div`, `img`, etc.
+To test whether you properly imported the CSS file into your HTML, you should write a CSS class. When writing a CSS class that applies to all elements of a certain tag type, first you need to declare which HTML element type it applies to, for instance, `h1`, `div`, `img`, etc.
 
-Then should follow an object, which you declare using `{ }`. Each class object is comprised of key:value pairs separated by a semi-colon. Each key is the name of a CSS property and each value defines that property for the class you're writing. Here is an example of a CSS class for the `h1` tag:
+What follows the element name is an object, which you declare using `{ }`. Each class object is comprised of key:value pairs separated by a semi-colon. Each key is the name of a CSS property and each value defines that property for the class you're writing. Here is an example of a CSS class for the `h1` tag:
 
 ```css
 h1 {
@@ -189,13 +189,13 @@ In the example above, the class is for `h1` tags in your HTML file and has key:v
 
 Many other CSS properties exist. Here is a [list of CSS Properties](https://www.w3schools.com/cssref/default.asp). Use it as a resource when styling your web applications.  
 
-To see an examplein your own browser, download this repository and drag to the browser the [styles html file](html/styles_one.html). It should look like this:
+To see an example in your own browser, download this repository and drag to the browser the [styles html file](html/styles_one.html). It should look like this:
 
 ![](images/styles_one_photo.png)
 
 ### CSS Style Attribute
 
-Instead of using a stylesheet, you can use an HTML element's `style` attribute to add CSS to your webpage. Set the `style` attribute to a string (not an object) containing key:value pairs separated by a semi-colon. Like a CSS class in an external `.css` file, each key is the name of a CSS property and each value defines that property for the class you're writing. Here is an example:
+Instead of using a stylesheet, you can use an HTML element's `style` attribute to add CSS to your web page. Set the `style` attribute to a string (not an object) containing key:value pairs separated by a semi-colon. Like a CSS class in an external `.css` file, each key is the name of a CSS property and each value defines that property for the class you're writing. Here is an example:
 
 ```html
 <p
@@ -241,7 +241,21 @@ Now that you have a CSS class, you should apply it to an HTML element. Using the
 <h1 class="page-title">Hello ITC!</h1>
 ```
 
-In the example, you style the `h1` tag with the `.page-title` custom class you wrote by setting the `h1` tag's `class` attribute equal to the name of the CSS class as a string`"page-title"`. Instead of styling all the `h1` tags, you only styled the one with its `class` set to `.page-title`.  You can, however, apply that same `class` to multple HTML elements of any type. So it's reusable, unlike the `script` example above. Also, you can apply more than one selector to an HTML element. If in addition tothe `.page-title` selector, you also have a `.bold-text` selector, you can apply both to the same HTML element by putting a space between the class name, like this:
+In the example, you style the `h1` tag with the `.page-title` custom class you wrote by setting the `h1` tag's `class` attribute equal to the name of the CSS class as a string`"page-title"`. Instead of styling all the `h1` tags, you only styled the one with its `class` attribute set to `.page-title`.  You can, however, apply that same `class` to multiple HTML elements of any type. So it's reusable, unlike the `script` example above. Also, you can apply more than one selector to an HTML element. If in addition to the `.page-title` selector, if you also have a `.bold-text` selector, you can apply both to the same HTML element by putting a space between the class name, like this:
+
+```css
+.page-title {
+  background-color: black;
+  color: white;
+  margin: 10px;
+  padding: 20px;
+  width: 50%;
+}
+
+.bold-text {
+  font-weight: 900;
+}
+```
 
 ```html
 <h1 class="page-title bold-text">Hello ITC!</h1>
@@ -249,7 +263,7 @@ In the example, you style the `h1` tag with the `.page-title` custom class you w
 
 Note, that if the `.page-title` and `.bold-text` classes were to have conflicting styles (e.g., one with `font-weight: 100` and the other with `font-weight: 900`), the one appearing lower in the `.css` file will win.  
 
-As you can see from the example, the syntax for a _`.class`_  selector is a `.` followed by a name that you choose. When naming your own class, choose names that are unique, short, and descriptive. Good naming will make your code easier to maintain. Plus, good naming helps you tell a story with your code, which makes it easier to understand. When someone reads it, good names bring your code to life! Avoid using names that are the same as those for built-in functions and variables, other reservered names, and the same as other variables of yours.
+As you can see from the example, the syntax for a _`.class`_  selector is a `.` followed by a name that you choose. When naming your own class, choose names that are unique, short, and descriptive. Good naming will make your code easier to maintain. Plus, good naming helps you tell a story with your code, which makes it easier to understand. When someone reads it, good names bring your code to life! Avoid using names that are the same as those for built-in functions and variables, other reserved names, and the same as other variables of yours.
 
 In CSS, your class names are for objects, not actions. Therefore, it's recommended to use nouns. For instance, `.spinner`, `.success-alert`, and `.page-title` are nouns that would help explain your code. Also, use `kebab-case` when your CSS class name has multiple words.
 
@@ -260,7 +274,7 @@ Check out the [Checkers Example](html/checkers.html) in the code and in your bro
 
 ## [Media Queries](#media-queries)  
 
-Media queries are used in responsive web design to help customize the view based on the user's screensize. In other words, media queries allow you to set HTML element properties that depend upon whether a certain condition is true. For purposes of responsive web design, usually that contidion is the screen width. So, for instance, you can choose for an element to have `font-size: 28px` when the screen is greater than `760px` wide and `font-size: 24px` when the screen is less than or equal to `760px`. This means that you can design webpages that look great on phones, tablets, and computers of all sizes.
+Media queries are used in responsive web design to help customize the view based on the user's screen size. In other words, media queries allow you to set HTML element properties that depend upon whether a certain condition is true. For purposes of responsive web design, usually that condition is the screen width. So, for instance, you can choose for an element to have `font-size: 28px` when the screen is greater than `760px` wide and `font-size: 24px` when the screen is less than or equal to `760px`. This means that you can design web pages that look great on phones, tablets, and computers of all sizes.
 
 ### Media Query Syntax and Example
 
@@ -282,7 +296,7 @@ body {
 
 In the example above, you see the `@media` syntax followed by the condition ` only screen and (max-width: 600px)`, which translates to "only when the screen is 600px or less". This is called a breakpoint. Then comes the object containing CSS classes. Ultimately, the `body`'s background color will be `red` when the screensize is `600px` or less. Otherwise, it is` blue`. 
 
-In your browser, look at the example [media queries file](html/media_queries.html). Change the browser size. See how below `600px` screen width the background is `red` and above it is `blue`. Now, modify the code to add other CSS styles to your breakpoint so that more than just the background color changes. Also try adding additional breakpoints. When doing so, know that the order or your [media queries matters](https://stackoverflow.com/questions/8790321/why-does-the-order-of-media-queries-matter-in-css).
+In your browser, look at the example [media queries file](html/media_queries.html). Change the browser size. When the screen width is less than `600px`, the background is `red`. Otherwise, the background is `blue`. Now, modify the code to add other CSS styles to your breakpoint so that more than just the background color changes. Also try adding additional breakpoints. When doing so, know that the order or your [media queries matters](https://stackoverflow.com/questions/8790321/why-does-the-order-of-media-queries-matter-in-css).
 
 For more on media queries generally, check out [W3 Schools Media Queries](https://www.w3schools.com/cssref/css3_pr_mediaquery.asp) page.
 
@@ -290,7 +304,7 @@ For more on media queries generally, check out [W3 Schools Media Queries](https:
 
 When writing responsive web applications, you need to write CSS that accounts for screens of all sizes. By taking a mobile-first approach, you design your application for mobile screens and then use media queries to account for larger screens. A mobile-first approach results in a faster page display on smaller devices.
 
-Your standard styles are those appearing outside the media queries, and your media query styles are those inside the media queries. With a mobile-first approach, your standard styles will control the style generally and on mobile devices, and the media queries will control some of the styles in larger screens. The condition in your media queries, thererfore, will change the design when the page increases in size.
+Your standard styles are those appearing outside the media queries, and your media query styles are those inside the media queries. With a mobile-first approach, your standard styles will control the style generally and on mobile devices, and the media queries will control some of the styles in larger screens. The condition in your media queries, therefore, will change the design when the page increases in size.
 
 Here is an example of a [set of media queries](https://stackoverflow.com/questions/28016406/problems-with-media-queries/) for mobile first:
 
@@ -312,7 +326,7 @@ Here is an example of a [set of media queries](https://stackoverflow.com/questio
 }
 ```
 
-Look at the example located in the [mobile_first file](html/mobile_first.html) so that you see the webpage and open the code in a Code Editor. In the code, you'll see code that hides elements, changes font size, and more based on a mobile-first approach. Play around with the code. Add your own responsive features. View it in the browser as a webpage to see your changes.
+Look at the example located in the [mobile_first file](html/mobile_first.html) so that you see the web page and open the code in a Code Editor. In the code, you'll see code that hides elements, changes font size, and more based on a mobile-first approach. Play around with the code. Add your own responsive features. View it in the browser as a web page to see your changes.
 
 
 ## [Self Study](#self-study)
