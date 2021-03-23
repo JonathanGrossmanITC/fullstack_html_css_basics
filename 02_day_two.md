@@ -1,23 +1,100 @@
 # Day 2: HTML and CSS Basics
 
-In this lesson, you learn about the `position` style property and its cousins `top`, `right`, `bottom`, and `left`. Those are great for positioning a single element with precision. Next, you practice working with media queries. Media queries are a very useful tool in responsive web design. They let you change an element's style based on the screensize. Then, you learn about CSS animations. Use transitions and keyframes to animate elements on your page.
+In this lesson, you learn about page layout. Specifically, you learn how to:  
 
+- Position a single element   
+- Align multiple HTML elements in a row **or** column   
+- Organize multiple HTML elements in rows **and** columns  
+ 
+To position an single HTML element, you will learn about the `position` style property and its cousins `top`, `right`, `bottom`, and `left`. This collection of properties is great for positioning a single element with precision, like a navbar, footer, or icon. 
 
-In this lesson, you also learn about flexbox, a powerful toolset for creating layouts for multiple HTML elements in either a row or column. In later chapters, you learn about using CSS to position individual elements (`position` and its cousins) and to position multiple elements using Grid (columns *and* rows). In a later chapter, you learn a fourth layout option, too, which is using Bootstrap's layout system. 
+To align multiple elements in a row **or** column, you learn about the Flexbox collection of properties. Flexbox is a powerful toolset that makes it easy to align items in one dimension, center HTML elements or text, evenly space HTML elements, and create dynamic containers that adjust to content size and browser dimensions.
+
+To align multiple elements in rows **and** columns, you learn about the Grid Layout collection of properties. Grid Layout is useful for creating page layouts in two dimensions. You can use a Grid Layout in creative ways to organize and display content.  
 
 By the end of this lesson, you will have:
 
-- The basics of using [Flexbox](#flexbox) for layout  
-- Experience using the `position` style property
-- CSS grid layout basics  
+- Experience using the [`position` style property](#position-style-property)  
+- The basics of using [Flexbox](#flexbox) for organizing HTML elements in a row or column    
+- Knowledge of [CSS Grid Layout](#css-grid) for organizing HTML elements in rows and columns 
 - Self study suggestions for building a layout and working with font awesome
 
+
+## [Position Style Property](#position-style-property)  
+
+The `position` style property allows you to control where an element is positioned on the page. The default value for `position` is `static`. This means that elements render in order as they are written in your code. You can override the default value to [position elements](https://www.w3schools.com/cssref/pr_class_position.asp) relative to specific elements on your page. Your other options for `position` are the values `absolute`, `relative`, `fixed`, and `sticky`. Here is an example of three classes:
+
+```css
+.header-title {
+  font-size: 24px;
+}
+
+.header-subtitle {
+  font-size: 24px;
+  position: static;
+}
+
+.footer {
+  font-size: 24px;
+  position: absolute;
+}
+```
+
+In the example above, the top two classes (`.header-title` and `.header-subtitle`) are `position: static`. This is the default for both, so you don't need to explicitly declare it. The only difference between the two is that one explicitly declares `position: static` and the other doesn't. Explicitly declaring the default value doesn't change it, and therefore both are `position: static`. The third class (`.footer`) is `position: absolute` because it overrides the default by explicitly declaring `position: absolute`.
+
+Often used in combination with the `position` property are the properties `top`, `right`, `bottom`, and `left`. Their values are in pixels, like `top: 10px`, and are used with `position` to place HTML elements on the page. The properties `top`, `right`, `bottom`, and `left` influence an element only if the element is *positioned*. An element is positioned only if its `position` is anything other than `static`.
+
+Using `top`, `right`, `bottom`, and `left` in combination with the `position` values other than `static` allow you to position an element with precision regardless of where its default position would be. To better understand how the `position`, `top`, `right`, `bottom`, and `left` values behave, here are a few notes and examples. 
+
+When `position` has its default value of `static`, if you set `top`, `right`, `bottom`, and `left`, the `position: static` element responds to the document, not to its parent. Accordingly, statically positioned elements aren't influenced by `top`, `right`, `bottom`, and `left` values.
+
+In contrast, the `absolute` value positions an element relative to its first *positioned* ancestor element. Note the requirement of a *positioned* ancestor. This means the `absolute` element needs to have a ancestor element that also has a `position` property set. For instance, if the parent element has `position: relative`, then the `position: absolute` child element will have properties for `top`, `right`, `bottom`, `left` that refer to the parent element.
+
+```css
+.section-wrapper {
+  position: relative;
+}
+
+.footer {
+  font-size: 24px;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+}
+```
+
+In the example above, assume the HTML file is such that the `.section-wrapper` element wrap the `.footer` element. The `.footer` class has `position: absolute` and `0px` for each of `bottom`, `left`, and `right`. The `.section-wrapper` is a *positioned* ancestor of the `.footer` element because it is `position: relative` and wraps the `.footer` (i.e., the `position: absolute` element). This results in the `.footer` element appearing at the bottom of the `.section-wrapper` element and spanning that element's entire width.
+
+When `relative`, the element is positioned using `top`, `right`, `bottom`, and `left` relative to its normal position. Because the element is *positioned* (i.e., its `position` is `relative` instead of `static`), it responds to values for `top`, `right`, `bottom`, and `left`. For instance, `position: relative; top: 10px` adds 10 pixels to the element's top position relative to where its position otherwise would be. See this StackOverflow post about [the difference between position static and relative](https://stackoverflow.com/questions/5011211/difference-between-static-and-relative-positioning). As you saw above for `absolute`, setting an element's position to `relative` is also used for *positioning* it so that it can serve as the positioned ancestor for an `absolute` element.
+
+When `fixed`, the browser positions the element relative to the browser window. One effect of this is that the `position: fixed` element does not move when the user scrolls. For instance, a footer with `position: fixed; bottom: 0` will appear at the bottom of the browser even when the user scrolls.
+
+```css
+.footer {
+  font-size: 24px;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+}
+```
+
+In the example above, the `.footer` class has `position: fixed` and `0px` for each of `bottom`, `left`, and `right`. Used in combination, the `position`, `bottom`, `left`, and `right` result in a footer appearing at the bottom of the screen and spanning the entire width of the page, even when the user scrolls. You'll see an example of this in one of html files but for a navbar instead of a footer.
+
+The `sticky` value positions an element relative to the user's scroll position. It exhibits both `relative` and `fixed` behavior. The `sticky` element acts like a `relative` element until the scroll position reaches a specified location in the viewport. Then, the `sticky` element acts like a `fixed` element. It remains in place. An element with `position: sticky; top: 200px;` is relatively positioned until the scroll location causes the element to be `200px` from the top. Then it sticks and remains `50px` from the top, even when the user scrolls.
+
+To better understand the behavior of positioning properties, open in your browser the [positions](html/position.html) file so that you see the webpage (not the source code on GitHub). Open the inspector, and take turns toggling on and off the properties for the `.position-absolute` class of `right`, `bottom`, `left`, `height`, and `width`. Try different combinations of on and off and also try changing their values. See what happens. 
+
+What happens when you change the `position` properties of either class to something else? When you change the `.position-absolute` value for `position` to `fixed`, where do those elements go? Are they both on the DOM? How can you tell?
+
+For more examples and resources, visit [W3 Schools](https://www.w3schools.com/cssref/pr_class_position.asp), [CSS Tricks Position](https://css-tricks.com/almanac/properties/p/position/) and [CSS Tricks Top Right Bottom Left](https://css-tricks.com/almanac/properties/t/top-right-bottom-left/).
 
 ## [Flexbox](#flexbox)
 
 Flexbox provides an efficient way to organize multiple HTML elements on a webpage in a column *or* row (i.e, in one dimension). In later chapters, you learn about positioning a single HTML element using the `position` property and about positioning multiple HTML elements on a webpage in a grid of rows *and* columns (i.e, two-dimentions).
 
-Flexbox isn't just one style property. Rather, it consists of a collection of CSS style properties that can be used together. When using flexbox, you turn one element into a flex container. The elements in that container will then display flex behavior, meaning that the container element can adjust the height, width, direction, and order based on the space available in the container and other considerations. 
+Flexbox isn't just one style property. Rather, it consists of a collection of CSS style properties that can be used together. When using Flexbox, you turn one element into a flex container. The elements in that container will then display flex behavior, meaning that the container element can adjust the height, width, direction, and order based on the space available in the container and other considerations. 
 
 Flexbox's behavior makes it a good choice when working with dynamic content. An example of its dynamic behavior, based on the screensize, is when a flex container expands an interior element's width to fill available free space due to a large screensize. In contrast, it also can shrink an interior element's width to prevent overflow. It can even handle elements that have dynamic size values, like `%` and wrap elements when the parent container lacks enough space to fit all in one row or column (which can make it's one-dimensional structure look like a grid). 
 
@@ -27,9 +104,9 @@ Flexbox style properties are divided into two main categories: (1) those for the
 
 ### Parent Flexbox Properties
 
-Many powerful parent flexbox properties exist. The main parent flexbox property you should know is `display: flex`. Setting the `display` property to `flex` turns an HTML element into a flexbox container. Without it, the other flexbox properties won't work. 
+Many powerful parent Flexbox properties exist. The main parent Flexbox property you should know is `display: flex`. Setting the `display` property to `flex` turns an HTML element into a Flexbox container. Without it, the other Flexbox properties won't work. 
 
-Inside a flex container, elements are aligned on the main axis. The main axis of a `div` is the `x-axis`, so the elements inside a `div` flexbox container will appear next to each other by default. Note that the flex container influences only the elements and content directly inside it. Not the elements inside those elements. 
+Inside a flex container, elements are aligned on the main axis. The main axis of a `div` is the `x-axis`, so the elements inside a `div` Flexbox container will appear next to each other by default. Note that the flex container influences only the elements and content directly inside it. Not the elements inside those elements. 
 
 Here is an example of a CSS class with its `display` property set to `flex`.
 
@@ -105,15 +182,15 @@ In the modified example above, you added `align-items`, `height`, and `justify-c
 
 ![](images/flexbox_two_photo.png)
 
-In addition to positioning *elements* inside a flexbox container, you can use the technique above to position *text* horizontally and/or vertically inside an element. For instance, you could turn the `.button` class into a flex container with `align-items` and `justify-content` set to `center`. Then, the text inside the `.button` will appear in the middle of the button.
+In addition to positioning *elements* inside a Flexbox container, you can use the technique above to position *text* horizontally and/or vertically inside an element. For instance, you could turn the `.button` class into a flex container with `align-items` and `justify-content` set to `center`. Then, the text inside the `.button` will appear in the middle of the button.
 
-Centering is just one way you can position elements or text within a flex container. You also can align items at the start or end of the container. Plus, the parent container has many other flexbox options, like `flex-direction` and `flex-wrap`. Check out [this great flexbox guide](https://css-tricks.com/snippets/css/a-guide-to-flexbox/).
+Centering is just one way you can position elements or text within a flex container. You also can align items at the start or end of the container. Plus, the parent container has many other Flexbox options, like `flex-direction` and `flex-wrap`. Check out [this great Flexbox guide](https://css-tricks.com/snippets/css/a-guide-to-flexbox/).
 
 A note on `flex-direction` -- it flips which axis is the main and which is the cross access. This results in `align-items` and `justify-content` controlling whichever axis it didn't control by default instead of its default axis. In the example above, adding `flex-direction: column` to the `div` results in `align-items` controlling horizontal orientation of the child elements and `justify-content` controlling the vertical (the opposite of the default on a `div`).
 
 ### Child Flexbox Properties
 
-The children elements in a flexbox container also have their own properties. For instance, `flex-grow` and `flex-shrink` allow you to increase or decrease the size of an interior element based on the available space in the container. Each of them accept an integer as a value. That value determines the proportion of available space the item should occupy.
+The children elements in a Flexbox container also have their own properties. For instance, `flex-grow` and `flex-shrink` allow you to increase or decrease the size of an interior element based on the available space in the container. Each of them accept an integer as a value. That value determines the proportion of available space the item should occupy.
 
 For example, for `flex-grow`, if all interior elements are `flex-grow: 1`, any extra space in the container will be distributed equally. If, however, one of the children is `flex-grow: 2`, it would try to occupy twice as much space as the others.
 
@@ -164,91 +241,20 @@ See that the pause button (i.e., the one with the `.button-pause` class) takes u
 
 Another common thing to do is set the child's `align-self` or `justify-self` properties to override the `align-items` or `justify-content` properties, respectively, as applied to that child. It essentially takes that child out of the normal flow. This is good, for example, if you want all elements centered in the flex container except for one of the elements. You can use`align-self` or `justify-self` on that child to position it.  
 
-There is a lot more you can do with child components CSS flex properties, like even set the order in which they align themselves. Again, check out [this great flexbox guide](https://css-tricks.com/snippets/css/a-guide-to-flexbox/).
+There is a lot more you can do with child components CSS flex properties, like even set the order in which they align themselves. Again, check out [this great Flexbox guide](https://css-tricks.com/snippets/css/a-guide-to-flexbox/).
 
-Other resources that might help are [MDN's flexbox basics](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox), [W3 Schools Flexbox](https://www.w3schools.com/css/css3_flexbox.asp), and [Flexbox Frogger](https://flexboxfroggy.com/).  
-
-
-## [Position Style Property](#position-style-property)  
-
-The `position` style property allows you to control where an element is positioned on the page. The default value for `position` is `static`. This means that elements render in order as they are written in your code. You can override the default value to [position elements](https://www.w3schools.com/cssref/pr_class_position.asp) relative to specific elements on your page. Your other options for `position` are the values `absolute`, `relative`, `fixed`, and `sticky`. Here is an example of three classes:
-
-```css
-.header-title {
-  font-size: 24px;
-}
-
-.header-subtitle {
-  font-size: 24px;
-  position: static;
-}
-
-.footer {
-  font-size: 24px;
-  position: absolute;
-}
-```
-
-In the example above, the top two classes (`.header-title` and `.header-subtitle`) are `position: static`. This is the default for both, so you don't need to explicitly declare it. The only difference between the two is that one explicitly declares `position: static` and the other doesn't. Explicitly declaring the default value doesn't change it, and therefore both are `position: static`. The third class (`.footer`) is `position: absolute` because it overrides the default by explicitly declaring `position: absolute`.
-
-Often used in combination with the `position` property are the properties `top`, `right`, `bottom`, and `left`. Their values are in pixels, like `top: 10px`, and are used with `position` to place HTML elements on the page. The properties `top`, `right`, `bottom`, and `left` influence an element only if the element is *positioned*. An element is positioned only if its `position` is anything other than `static`.
-
-Using `top`, `right`, `bottom`, and `left` in combination with the `position` values other than `static` allow you to position an element with precision regardless of where its default position would be. To better understand how the `position`, `top`, `right`, `bottom`, and `left` values behave, here are a few notes and examples. 
-
-When `position` has its default value of `static`, if you set `top`, `right`, `bottom`, and `left`, the `position: static` element responds to the document, not to its parent. Accordingly, statically positioned elements aren't influenced by `top`, `right`, `bottom`, and `left` values.
-
-In contrast, the `absolute` value positions an element relative to its first *positioned* ancestor element. Note the requirement of a *positioned* ancestor. This means the `absolute` element needs to have a ancestor element that also has a `position` property set. For instance, if the parent element has `position: relative`, then the `position: absolute` child element will have properties for `top`, `right`, `bottom`, `left` that refer to the parent element.
-
-```css
-.section-wrapper {
-  position: relative;
-}
-
-.footer {
-  font-size: 24px;
-  position: absolute;
-  bottom: 0px;
-  left: 0px;
-  right: 0px;
-}
-```
-
-In the example above, assume the HTML file is such that the `.section-wrapper` element wrap the `.footer` element. The `.footer` class has `position: absolute` and `0px` for each of `bottom`, `left`, and `right`. The `.section-wrapper` is a *positioned* ancestor of the `.footer` element because it is `position: relative` and wraps the `.footer` (i.e., the `position: absolute` element). This results in the `.footer` element appearing at the bottom of the `.section-wrapper` element and spanning that element's entire width.
-
-When `relative`, the element is positioned using `top`, `right`, `bottom`, and `left` relative to its normal position. Because the element is *positioned* (i.e., its `position` is `relative` instead of `static`), it responds to values for `top`, `right`, `bottom`, and `left`. For instance, `position: relative; top: 10px` adds 10 pixels to the element's top position relative to where its position otherwise would be. See this StackOverflow post about [the difference between position static and relative](https://stackoverflow.com/questions/5011211/difference-between-static-and-relative-positioning). As you saw above for `absolute`, setting an element's position to `relative` is also used for *positioning* it so that it can serve as the positioned ancestor for an `absolute` element.
-
-When `fixed`, the browser positions the element relative to the browser window. One effect of this is that the `position: fixed` element does not move when the user scrolls. For instance, a footer with `position: fixed; bottom: 0` will appear at the bottom of the browser even when the user scrolls.
-
-```css
-.footer {
-  font-size: 24px;
-  position: fixed;
-  bottom: 0px;
-  left: 0px;
-  right: 0px;
-}
-```
-
-In the example above, the `.footer` class has `position: fixed` and `0px` for each of `bottom`, `left`, and `right`. Used in combination, the `position`, `bottom`, `left`, and `right` result in a footer appearing at the bottom of the screen and spanning the entire width of the page, even when the user scrolls. You'll see an example of this in one of html files but for a navbar instead of a footer.
-
-The `sticky` value positions an element relative to the user's scroll position. It exhibits both `relative` and `fixed` behavior. The `sticky` element acts like a `relative` element until the scroll position reaches a specified location in the viewport. Then, the `sticky` element acts like a `fixed` element. It remains in place. An element with `position: sticky; top: 200px;` is relatively positioned until the scroll location causes the element to be `200px` from the top. Then it sticks and remains `50px` from the top, even when the user scrolls.
-
-To better understand the behavior of positioning properties, open in your browser the [positions](html/position.html) file so that you see the webpage (not the source code on GitHub). Open the inspector, and take turns toggling on and off the properties for the `.position-absolute` class of `right`, `bottom`, `left`, `height`, and `width`. Try different combinations of on and off and also try changing their values. See what happens. 
-
-What happens when you change the `position` properties of either class to something else? When you change the `.position-absolute` value for `position` to `fixed`, where do those elements go? Are they both on the DOM? How can you tell?
-
-For more examples and resources, visit [W3 Schools](https://www.w3schools.com/cssref/pr_class_position.asp), [CSS Tricks Position](https://css-tricks.com/almanac/properties/p/position/) and [CSS Tricks Top Right Bottom Left](https://css-tricks.com/almanac/properties/t/top-right-bottom-left/).
+Other resources that might help are [MDN's Flexbox basics](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox), [W3 Schools Flexbox](https://www.w3schools.com/css/css3_flexbox.asp), and [Flexbox Frogger](https://flexboxfroggy.com/).  
 
 
 ## [CSS Grid](#css-grid)
 
-CSS Grid Layout is a grid-based layout system great for controlling your page layout by row and column. It provides an alternative to or supplement for working with the `position` style property and flexbox. The `position` style property is useful for positioning individual elements and flexbox is great for positioning in one dimension (column or row). Neither, however, is a great solution for positioning in two-dimensions. That's where Grid excels.
+CSS Grid Layout is a grid-based layout system great for controlling your page layout by row and column. It provides an alternative to or supplement for working with the `position` style property and Flexbox. The `position` style property is useful for positioning individual elements and Flexbox is great for positioning in one dimension (column or row). Neither, however, is a great solution for positioning in two-dimensions. That's where Grid excels.
 
 CSS Grid is a solution for positiong HTML elements in two-dimensions. In some ways Grid behaves like a table because you can layout the elements in columns and rows. Grid, however, is more dynamic and flexible than a table because in a Grid the container's child elements can overlap and layer. Hence, Grid offers the organization of a table but a flexibility similar to CSS positioned elements.
 
-When deciding whether to use Grid, flexbox, or `position`, ask what you're trying to position. If you're positioning a single element, then `position` or flexbox are good tools. If you're positioning multiple elements in a row *or* column, then flexbox is a good option. If you're positioning multiple elements in rows *and* columns, the Grid is a good option (or maybe a flexbox container that wraps).
+When deciding whether to use Grid, Flexbox, or `position`, ask what you're trying to position. If you're positioning a single element, then `position` or Flexbox are good tools. If you're positioning multiple elements in a row *or* column, then Flexbox is a good option. If you're positioning multiple elements in rows *and* columns, the Grid is a good option (or maybe a Flexbox container that wraps).
 
-Similar to flexbox, a Grid layout has a parent element with one or more child elements nested inside. To make the parent a Grid container, set its `display` property to `grid` or `inline-grid`.
+Similar to Flexbox, a Grid layout has a parent element with one or more child elements nested inside. To make the parent a Grid container, set its `display` property to `grid` or `inline-grid`.
 
 ```css
 .grid-container {
@@ -323,20 +329,20 @@ Here is what it looks like:
 
 ![](images/grid.png)
 
-At this point you may be confused about when to use Grid and when to use flexbox. Deciding whether to use Grid versus flexbox is not always an easy decision. Consider some of their differences. Two main differences are:
+At this point you may be confused about when to use Grid and when to use Flexbox. Deciding whether to use Grid versus Flexbox is not always an easy decision. Consider some of their differences. Two main differences are:
 
 - Flexbox allows each item to take up as much space as its content allows, whereas Grid has strict sizing that doesn't automatically adjust by default to its content size. 
 - Flexbox can adjust the number of items in a row (or column) based on the browser's width (or height), whereas a Grid will maintain the same orientation by default regardless of the browser's width. 
 
-These are [among the things to consider](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Relationship_of_Grid_Layout) when deciding how to use Grid and flexbox. Although you can oftentimes achieve the same result using either approach, one might be better for you than the other given your circumstances.
+These are [among the things to consider](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Relationship_of_Grid_Layout) when deciding how to use Grid and Flexbox. Although you can oftentimes achieve the same result using either approach, one might be better for you than the other given your circumstances.
 
 You can use Grid and the `property` style element together. If you add to the Grid container the `position: relative` style property, then it serves as both the Grid container and also the *positioned* element for any elements inside it. The wrapped elements can now use Grid for sizing, spacing and general layout, and also use `position: absolute` in combination with `top`, `right`, `bottom`, and `left` to take elements out of the flow of the general layout. Check out [how to use Grid with absolute positioning](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Relationship_of_Grid_Layout#grid_and_absolutely_positioned_elements).
 
 Look at the example located in the [grid file](html/grid.html) so that you see the webpage and open the files in a Code Editor. In the files, you'll see code that creates a CSS grid. View how it looks in the browser. Play around with the code to change the grid layout and other styles. 
 
-Is the grid responsive? How can you use the `position` style property and flexbox in combination with Grid?
+Is the grid responsive? How can you use the `position` style property and Flexbox in combination with Grid?
 
-Can you [make the same layout](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Relationship_of_Grid_Layout#the_same_layout_with_css_grids) using flexbox instead of Grid?
+Can you [make the same layout](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Relationship_of_Grid_Layout#the_same_layout_with_css_grids) using Flexbox instead of Grid?
 
 Try learning more about CSS Grid Layout on your own. MDN's article about the [relationship of grid layout to other layout methods](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Relationship_of_Grid_Layout) and the [basics of CSS Grid](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout). Think about [when to use Flexbox and when to use CSS grid](https://blog.logrocket.com/flexbox-vs-css-grid/). Also consider looking at [W3Schools](https://www.w3schools.com/css/css_grid.asp)'s documentation.
 
@@ -345,6 +351,6 @@ Try learning more about CSS Grid Layout on your own. MDN's article about the [re
 
 Practice planning your page before actually writing the code. When planning, first it's important to pick whether you're writing your own custom CSS or using a framework. Although it's okay to occassionaly mix the two at times, you want to have one primary approach in that regard. Then, decide what the layout looks like on paper. 
 
-Next, think about how you will use HTML and CSS to generate the basic layout (ignoring the finer details like text, font-size, color, etc.). Think about whether and how you can use the Grid system with flexbox and `position`. Think about which containers will hold which elements. Once you have a decent idea, start writing your code.
+Next, think about how you will use HTML and CSS to generate the basic layout (ignoring the finer details like text, font-size, color, etc.). Think about whether and how you can use the Grid system with Flexbox and `position`. Think about which containers will hold which elements. Once you have a decent idea, start writing your code.
 
 Finally, on an unrelated note, check out [Font Awesome](#https://fontawesome.com/). It's a libarary of icons that you might find useful. Use what you learned about Bootstrap to install Font Awesome and use its documentation.
