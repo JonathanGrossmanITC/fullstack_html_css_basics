@@ -10,7 +10,7 @@ To position an single HTML element, you will learn about the `position` style pr
 
 To align multiple elements in a row **or** column, you learn about the Flexbox collection of properties. Flexbox is a powerful toolset that makes it easy to align items in one dimension, center HTML elements or text, evenly space HTML elements, and create dynamic containers that adjust to content size and browser dimensions.
 
-To align multiple elements in rows **and** columns, you learn about the Grid Layout collection of properties. Grid Layout is useful for creating page layouts in two dimensions. You can use a Grid Layout in creative ways to organize and display content.  
+To align multiple elements in rows **and** columns, you learn about the Grid Layout collection of properties. Grid Layout is useful for creating page layouts in two dimensions. You can use Grid Layout in creative ways to organize and display content.  
 
 By the end of this lesson, you will have:
 
