@@ -1,12 +1,12 @@
 # Day 3: HTML and CSS Basics
 
-In this lesson, you cover the very basics of using CSS Grid. This layout module is a powerful toolset for organizing HTML elements on a page in two-dimensions. It's a great supplement for working with flexbox and the `position` property to organize your pages. Next, you learn about Bootstrap, a popular framework for CSS. Rather than write your own CSS classes, import Bootstrap and use their CSS classes. Plus, by learning Bootstrap, you pracice working with external libraries for CSS.
+In this lesson, you learn about CSS animations and Bootstrap. Using CSS animations, you can enhance your designs and improve the user experience. For instance, you can create loaders, alerts, hover effects, and more. You'll learn two different ways to create CSS animations. One way is using **transitions** and the other is using **keyframes**. Next, you learn about Bootstrap. It is a popular framework for applying CSS to your HTML elements. Rather than write your own CSS classes, you can import Bootstrap and use their CSS classes. Plus, by learning Bootstrap, you pracice working with external libraries for CSS.
 
 By the end of this lesson, you will have:
 
-- An intro to CSS animations  
-- An intro to Bootstrap  
-- Self study idea for finding loaders and other animations  
+- An intro to [CSS animations](#css-animations) using transitions and keyframes     
+- An intro to [Bootstrap](#intro-to-bootstrap)  
+- [Self study](#self-study) ideas for finding loaders and other animations  
 
 
 ## [CSS Animations](#css-animations)  
@@ -282,8 +282,6 @@ The components come in multiple options for size, color, and other properties. M
 Bootstrap has a ton of utility classes that allow you to build upon their other templates or use alone to style an element. Those utility classes include styles for CSS properties like borders, colors, display, flex, position, shadows, size, text, and others. Read about the [Bootstrap utility classes](https://getbootstrap.com/docs/5.0/utilities/colors/) to learn about what you can do with them.
 
 Finally, you can override Bootstrap styles by using your custom CSS. Let's say you want a button of a certain color that you can't find in Bootstrap. Write your own CSS class and apply it to the Bootstrap button element. Make sure you import your CSS file in your HTML file in the `head` below where you import Bootstrap.
-
-
 
 ## [Self Study](#self-study)
 
