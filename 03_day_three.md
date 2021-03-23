@@ -225,19 +225,34 @@ This installation is a quick and effective approach to working with Bootstrap. C
 
 ### Examples Using Bootstrap. 
 
-Among the many things you can use Bootstrap for are layout, content and forms, components, and utilities. They have ready-to-use CSS classes for you to use.  
+Among the many things for which you can use Bootstrap are layout, content and forms, components, and utilities. They have ready-to-use CSS classes for you to use.  
 
 #### Layout
 
-Bootstrap offers templates for page layouts. Bootstrap's layout system relies upon [containers](https://getbootstrap.com/docs/5.0/layout/containers/), rows, and [columns](https://getbootstrap.com/docs/5.0/layout/columns/) to create a [grid-like layout](https://getbootstrap.com/docs/5.0/layout/grid/), and [breakpoints](https://getbootstrap.com/docs/5.0/layout/breakpoints/) to adapt your layout in response to a particular viewport or device size. It is similar to Grid and Flexbox, but it has its own syntax and quirks.
+Bootstrap offers templates for page layouts. Bootstrap's layout system relies upon [containers](https://getbootstrap.com/docs/5.0/layout/containers/), rows, and [columns](https://getbootstrap.com/docs/5.0/layout/columns/) to create a [grid-like layout](https://getbootstrap.com/docs/5.0/layout/grid/), and [breakpoints](https://getbootstrap.com/docs/5.0/layout/breakpoints/) to adapt your layout in response to a particular viewport or device size. It has some similarities to Grid and Flexbox, but it has its own system, syntax, and quirks. Here is a basic example of a container with two rows, each row having 3 columns:
 
-To use Bootstraps layout system, you need to know that it consists of a container element that wraps HTML elements. The wrapped HTML elements serve as rows nested inside the container. The rows have columns nested inside them. 
+```html
+<div class="container">
+  <div class="row">
+    <div class="col-6">One</div>
+    <div class="col-6">Two</div>
+    <div class="col-6">Three</div>
+  </div>
+  <div class="row">
+   <div class="col-6">One</div>
+   <div class="col-6">Two</div>
+   <div class="col-6">Three</div>
+  </div>
+</div>
+```
 
-Containers center and horizontally pad your grid and are the outer-most wrapping element. Rows are elements nested directly inside containers and serve as containers for columns. Rows come with built-in values for `margin` and `padding`. You **must** use rows inside of a container. A good rule, is that if you use a container also use a row directly inside it, and if you use a row, wrap it with a container. 
+The example above highlights the HTML struture you need to use Bootstrap's layout system. It consists of a container element that wraps other HTML elements. The wrapped HTML elements serve as rows nested inside the container. The rows wrap HTML elements that serve as columns. Those nested columns can be from 1 to 12 units wide. In the example, they're 6 units wide, which means they're each as wide as half of the screen width.  
 
-Columns are nested inside rows. Each row has 12 columns. An element can span any number of the 12 rows. As you see in the Bootstrap examples, the Bootstrap classes for columns (`.col`) allow you to say how many (e.g., `.col-6`) columns that HTML element occupies.
+Let's look at this in more detail. Containers and are the outer-most wrapping element. They have built-in styling that center and horizontally pad your grid. Rows are elements nested directly inside containers and serve as containers for columns. Rows come with built-in values for `margin` and `padding`. You **must** use rows inside of a container. A good rule is that if you use a container also use a row directly inside it. The opposite is true too. If you use a row, wrap it with a container. 
 
-Use Bootstrap's built-in breakpoints to say how many columns an element should occupy depending upon the size of the browser. Bootstrap has six breakpoints. Extra small (`.col-xs-` or `.col-`), small (`.col-sm-`), medium (`.col-md-`), large (`.col-lg-`), extra large (`.col-xl-`), and extra extra large (`.col-xxl-`). The syntax means that the column at whichever designated screen size (and greater) will be the number of columns appearing after the second `-`. For instance, an element with (`.col-md-6`) will be 6 columns wide at medium-sized screens and greater. Below that, it is 12 columns because that is the default. 
+Columns are nested inside rows. Each column is divided into 12 equal-sized units, and one HTML element can span any number of the 12 units. For instance, you could have a column that is 2 units wide, one that is 6 units wide, and another that is 2 units wide.  They would all fit in the same row because they're less than the 12 units available. As you see in the Bootstrap examples, the Bootstrap classes for columns (`.col`) allow you to say how many (e.g., `.col-6`) columns that HTML element occupies.
+
+For resposive web pages, use Bootstrap's built-in breakpoints to say how many columns an element should occupy depending upon the size of the browser. Bootstrap has six breakpoints. Extra small (`.col-xs-` or `.col-`), small (`.col-sm-`), medium (`.col-md-`), large (`.col-lg-`), extra large (`.col-xl-`), and extra extra large (`.col-xxl-`). The syntax means that the column at the designated screen size (and greater) will be the number of columns appearing after the second `-`. For instance, an element with (`.col-md-6`) will be 6 units wide at medium-sized screens and greater. Below that, it is 12 units because that is the default. 
 
 You can add more than one breakpoint to an element. Here is an example of [mixing and matching](https://getbootstrap.com/docs/5.0/layout/grid/#mix-and-match):
 
@@ -264,14 +279,15 @@ You can add more than one breakpoint to an element. Here is an example of [mixin
 </div>
 ```
 
+In the example above, the `col-6 col-md-4` means that the element start at 50% wide (6 units) on small devices and increases to 33.3% wide (4 units) on medium and larger devices.
 
 Read more about the [Bootstrap grid options](https://getbootstrap.com/docs/5.0/layout/grid/#grid-options) and read more about [how it works](https://getbootstrap.com/docs/5.0/layout/grid/#how-it-works) to learn Bootstrap's grid system.
 
 #### Content and Forms
 
-Bootstrap comes with templates that style the content on your webpage, like text, images, tables, and more. Its styles provide default built-in styles for HTML elements, like the `body`, `h1` to `h6` tags, `form` and others. Simply using the HTML tag with Bootstrap installed will result in the Bootstap style appearing on the browser.  
+Bootstrap comes with templates that style the content on your webpage, like text, images, tables, forms, and more. The templates provide default built-in styles for HTML tag types, like the `body`, `h1` to `h6` tags, `form` and others. Simply using the HTML tag with Bootstrap installed will result in the Bootstap style appearing on the browser.  
 
-Bootstrap also provides Bootstrap classes for additional content styling that supplement or override the Bootstrap built-in styling. Use those styles by assigning them to an element's class attribute.
+Bootstrap also provides Bootstrap classes for additional content styling that supplement or override the Bootstrap built-in styling. Find those CSS class names in the Bootstrap documentation (links below), and apply those classes to specific HTML elements by add them to the element's `class` attribute.
 
 To learn more about Bootstrap content, check out their pages about [typography](https://getbootstrap.com/docs/5.0/content/typography/), [images](https://getbootstrap.com/docs/5.0/content/images/), [tables](https://getbootstrap.com/docs/5.0/content/tables/), and [figures](https://getbootstrap.com/docs/5.0/content/figures/). Be sure to look at the table on the right of each page in the links for content specific to that topic.
 
@@ -279,7 +295,7 @@ Also look at the documentation about [forms](https://getbootstrap.com/docs/5.0/f
 
 #### Components
 
-Bootstrap provides templates for many components that are common across most webpages. An example is the [button](https://getbootstrap.com/docs/5.0/components/buttons/) you saw earlier. In addition to buttons, Bootstrap offers pre-built [alerts](https://getbootstrap.com/docs/5.0/components/alerts/), [badges](https://getbootstrap.com/docs/5.0/components/badge/), [cards](https://getbootstrap.com/docs/5.0/components/card/), [dropdowns](https://getbootstrap.com/docs/5.0/components/dropdowns/), [navigation](https://getbootstrap.com/docs/5.0/components/navs-tabs/), [spinners](https://getbootstrap.com/docs/5.0/components/spinners/), and more.
+Bootstrap provides templates for many components that are common across most web pages. An example is the [button](https://getbootstrap.com/docs/5.0/components/buttons/) you saw earlier. In addition to buttons, Bootstrap offers pre-built [alerts](https://getbootstrap.com/docs/5.0/components/alerts/), [badges](https://getbootstrap.com/docs/5.0/components/badge/), [cards](https://getbootstrap.com/docs/5.0/components/card/), [dropdowns](https://getbootstrap.com/docs/5.0/components/dropdowns/), [navigation](https://getbootstrap.com/docs/5.0/components/navs-tabs/), [spinners](https://getbootstrap.com/docs/5.0/components/spinners/), and more.
 
 The components come in multiple options for size, color, and other properties. Mix and match to make your page look unique.
 
@@ -287,7 +303,7 @@ The components come in multiple options for size, color, and other properties. M
 
 Bootstrap has a ton of utility classes that allow you to build upon their other templates or use alone to style an element. Those utility classes include styles for CSS properties like borders, colors, display, flex, position, shadows, size, text, and others. Read about the [Bootstrap utility classes](https://getbootstrap.com/docs/5.0/utilities/colors/) to learn about what you can do with them.
 
-Finally, you can override Bootstrap styles by using your custom CSS. Let's say you want a button of a certain color that you can't find in Bootstrap. Write your own CSS class and apply it to the Bootstrap button element. Make sure you import your CSS file in your HTML file in the `head` below where you import Bootstrap.
+Finally, you can override Bootstrap styles by using your custom CSS. Let's say you want a button of a certain color that you can't find in Bootstrap. Write your own CSS class and apply it to the Bootstrap button element. Make sure you import your CSS file in your HTML file in the `head` ***below where you import Bootstrap***.
 
 ## [Self Study](#self-study)
 
