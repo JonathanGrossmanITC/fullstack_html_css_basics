@@ -2,7 +2,7 @@
 
 ## Day 1
 
-1. Create a project folder for HTMl and CSS  
+1. Create a project folder for HTML and CSS  
   
 2. In the HTML file:  
   -- In the body, add two `div` elements. One is for a navbar (`class="navbar"`) and the other is for the main wrapper (`class="main-wrapper"`).  
