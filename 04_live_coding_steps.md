@@ -1,5 +1,14 @@
 # Live Coding and Additional Resources
 
+This document contains steps and code for the live lectures. In the live lectures, you watch and help a developer build a responsive web page. The main purposes of the live coding session are to refresh the HTML and CSS basics, highlight key concepts from the written materials that accompany the lecture, and show you one example of how to build a landing page from scratch. 
+
+To help pack more content into less time so that you can see a project-based approach to writing HTML and CSS, we prepared the code for the live coding sessions in advance in order to reduce the amount of "trial and error" required when writing live HTML and CSS. This way, we can focus more on process and concepts than typing and fixing bugs. Hopefully some extra time permits so that the class can do some impromptu live coding at the end in order to simulate a more realistic beginning experience for writing HTML and CSS. We can run into bugs, get unexpected behavior that defies logic, and more. This will be good for developing problem-solving skills.   
+
+After these sessions, you will have:  
+- Refreshed basic HTML and CSS topics  
+- Focused on several key concepts for layout and design  
+- Seen how one developer's process for writing HTML and CSS to build a responsive landing page  
+
 ## Day 1
 
 The focus of this live coding session is to create a project folder, design the mobile layout and styles, and add media queries to handle some of the styles for larger screen sizes. By the end of this session, the page should look fairly good but have some imperfections. For instance, the title is not propertly aligned, the footer layout is awkward in larger screen sizes, and more. In the next live coding session, you will implement styles in your media questions that address those imperfections.  
@@ -17,7 +26,7 @@ Live Coding Steps:
   -- In the title wrapper, add an `h1` tag (`class="title"`) with text for the title.  
   -- In the section subwrapper, add two `div` elements. One is for section one (`class="section section-one"`) and the other is for section two (`class="section section-two"`).  
   -- In sections one and two, add an `h1` tag (`class="section-title"`) with text for a title and also add a `div` to wrap items (`class="items-wrapper"`).  
-  -- In the `div` elements that wraps items, add five or six `div` elements (`class="section-item"`) and text for each item.  
+  -- In the `div` elements that wraps the items, add five or six `div` elements (`class="section-item"`) and text for each item.  
   -- In the footer, add an `h1` tag (`class="title"`) with text for a title and also add a `div` element (`class="squares-wrapper"`) to wrap some squares.  
   -- In the `div` for wrapping squares, add eight `div` elements (`class="square"`), each of which will be in the shape of a square.  
   
