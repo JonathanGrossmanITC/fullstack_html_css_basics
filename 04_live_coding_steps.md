@@ -3,7 +3,7 @@
 ## Day 1
 
 1. Create a project folder for HTMl and CSS  
-2. In the HTML file, 
+2. In the HTML file:  
   -- In the body, add two `div` elements. One is for a navbar and the other is for the main wrapper.  
   -- In the navbar, add three `div` elements. The text for the elements should be Login, Signup, and ITC.  
   -- In the main wrapper, add two `div` elements. One is for a sidebar and the other is a content wrapper.  
