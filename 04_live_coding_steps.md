@@ -548,7 +548,83 @@ Live Coding Steps:
 }
 ```
 
-## Additional Resources
+## Day 3  
+
+The focus of this live coding session is to add animations to the web page and, if time permits, continue to improve the style. By the end of this session, the web page should be complete.     
+
+Live Coding Steps:  
+
+1. In the HTML file, find the footer. Inside the footer, add a new class to each `square`. Make the new class names unique for each square.  
+
+```html
+<!-- Rest of HTML is omitted from this sample -->
+...
+<!-- Child Three -->
+<div class="footer">
+  <h1 class="title">Squares</h1>
+  <div class="squares-wrapper">
+    <div class="square square-1"></div>
+    <div class="square square-2"></div>
+    <div class="square square-3"></div>
+    <div class="square square-4"></div>
+    <div class="square square-5"></div>
+    <div class="square square-6"></div>
+    <div class="square square-7"></div>
+    <div class="square square-8"></div>
+   </div>
+</div>
+```
+
+2. In the CSS file, add a transition animation to the `square` class.  
+
+```css
+/* Rest of CSS omitted from this sample */  
+
+.square {
+  /* design */
+  background-color: white;
+  height: 200px;
+  margin: 3px;
+  width: 200px;
+
+  /* animation */
+  transition: background-color 1s;
+}
+```
+
+3. In the CSS file, add a hover effect to each of the new, unique square classes.  
+
+```css
+.square-1:hover {
+  background-color: red;
+}
+.square-2:hover {
+  background-color: orange;
+}
+.square-3:hover {
+  background-color: yellow;
+}
+.square-4:hover {
+  background-color: green;
+}
+.square-5:hover {
+  background-color: blue;
+}
+.square-6:hover {
+  background-color: indigo;
+}
+.square-7:hover {
+  background-color: violet;
+}
+.square-8:hover {
+  background-color: black;
+}
+```
+
+4.  
+
+
+## Additional Resources  
    
 ### HTML and CSS
 
