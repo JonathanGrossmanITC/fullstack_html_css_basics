@@ -463,7 +463,7 @@ Live Coding Steps:
   }
 
   .sidebar {
-    /* display */
+    /* flex */
     display: flex;
     flex-direction: column;
 
