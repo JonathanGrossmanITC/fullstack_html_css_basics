@@ -558,7 +558,7 @@ Live Coding Steps:
 
 ```html
 <!-- Rest of HTML is omitted from this sample -->
-...
+
 <!-- Child Three -->
 <div class="footer">
   <h1 class="title">Squares</h1>
@@ -595,6 +595,8 @@ Live Coding Steps:
 3. In the CSS file, add a hover effect to each of the new, unique square classes.  
 
 ```css
+/* Rest of CSS omitted from this sample */  
+
 .square-1:hover {
   background-color: red;
 }
@@ -621,8 +623,83 @@ Live Coding Steps:
 }
 ```
 
-4.  
+4.  In the HTML file, find the navbar. Below it, add a new `div` element (`class="rocket"`).  
 
+```html
+<!-- Rest of HTML is omitted from this sample -->
+
+<div class="navbar">
+  <div class="navbar-item">Login</div>
+  <div class="navbar-item">Signup</div>
+  <div class="navbar-logo">&lt; itc ></div>
+</div>
+<div class="rocket">🚀</div>
+```
+
+5. In the CSS file, position the `body` tag so that you can position the `rocket` with `position: absolute`.  
+
+```css
+/* Rest of CSS omitted from this sample */  
+
+body {
+  position: relative;
+}
+```
+
+6. In the CSS file, add some initial style to the `rocket` class that positions it between the navbar and main section and sets some initial styles for design.  
+
+```css
+/* Rest of CSS omitted from this sample */  
+
+.rocket {
+  /* position */
+  position: absolute;
+  top: 65px;
+
+  /* design */
+  font-size: 48px;
+  width: 100%;
+  z-index: 10;
+}
+```
+
+
+7. In the CSS file, above the `rocket` class, add a `@keyframe` definition for the animation.  
+
+```css
+@keyframes scroll-right {
+  0% {
+    -moz-transform: translate(0%, 0%);
+    -webkit-transform: translate(0%, 0%);
+    display: block;
+    transform: translate(0%, 0%);
+  }
+  100% {
+    font-size: 24px;
+    -moz-transform: translate(100%, 30%);
+    -webkit-transform: translate(100%, 30%);
+    transform: translate(100%, -70%);
+  }
+}
+```
+
+8. In the CSS file, add the animation to the `rocket` class.  
+
+```css
+.rocket {
+  /* position */
+  position: absolute;
+  top: 65px;
+
+  /* design */
+  font-size: 48px;
+  width: 100%;
+  z-index: 10;
+
+  /* animation */
+  animation: scroll-right 7s ease-in 0s;
+}
+```
 
 ## Additional Resources  
    
