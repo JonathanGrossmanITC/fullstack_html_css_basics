@@ -2,7 +2,9 @@
 
 This document contains steps and code for the live lectures. In the live lectures, you watch and help a developer build a responsive web page. The main purposes of the live coding session are to refresh the HTML and CSS basics, highlight key concepts from the written materials that accompany the lecture, and show you one example of how to build a landing page from scratch. 
 
-To help pack more content into less time so that you can see a project-based approach to writing HTML and CSS, we prepared the code for the live coding sessions in advance in order to reduce the amount of "trial and error" required when writing live HTML and CSS. This way, we can focus more on process and concepts than typing and fixing bugs. Hopefully some extra time permits so that the class can do some impromptu live coding at the end in order to simulate a more realistic beginning experience for writing HTML and CSS. We can run into bugs, get unexpected behavior that defies logic, and more. This will be good for developing problem-solving skills.   
+To help pack more content into less time so that you can see a project-based approach to writing HTML and CSS, we prepared the code for the live coding sessions in advance in order to reduce the amount of "trial and error" required when writing live HTML and CSS. This way, we can focus more on process and concepts than typing and fixing bugs. 
+
+Hopefully some extra time permits so that the class can do some improv live coding at the end in order to simulate a more realistic beginning experience for writing HTML and CSS. We can run into bugs, get unexpected behavior that defies logic, and more. This will be good for developing problem-solving skills.   
 
 After these sessions, you will have:  
 - Refreshed basic HTML and CSS topics  
