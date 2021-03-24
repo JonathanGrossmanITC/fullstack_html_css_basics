@@ -251,6 +251,303 @@ The focus of this live coding session is to use Flexbox to improve the responsiv
 
 Live Coding Steps:  
 
+1. In the CSS file, revise the styles for screen sizes below 320px:  
+
+```css
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.navbar {
+  background-color: #5876e9;
+  display: block;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 1;
+}
+
+.navbar-item {
+  background-color: aliceblue;
+  border-radius: 5px;
+  color: black;
+  display: none;
+  margin: 5px;
+  padding: 10px;
+  text-align: center;
+}
+
+.navbar-logo {
+  background-color: #5876e9;
+  border-radius: 5px;
+  border: 2px dashed aliceblue;
+  color: aliceblue;
+  display: block;
+  margin: 5px;
+  padding: 10px;
+  text-align: center;
+}
+
+.main-wrapper {
+  /* flex */
+  display: flex;
+
+  /* position */
+  position: relative;
+  top: 100px;
+
+  /* design */
+  width: 100%;
+}
+
+.sidebar {
+  display: none;
+}
+
+.content-wrapper {
+  /* flex */
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+
+  /* design */
+  width: 100%;
+}
+
+.title-wrapper {
+  /* flex */
+  align-items: center;
+  display: flex;
+  justify-content: center;
+
+  /* design */
+  background-color: aliceblue;
+  border-radius: 10px;
+  font-family: "Courier New", Courier, monospace;
+  width: 98%;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 100;
+}
+
+.section {
+  padding: 10px;
+}
+
+.section-subwrapper {
+  /* flex */
+  display: flex;
+  flex-direction: column;
+
+  /* design */
+  background-color: white;
+  width: 100%;
+}
+
+.section-one {
+  /* flex */
+
+  /* design */
+  background-color: whitesmoke;
+  margin: 10px;
+}
+
+.section-two {
+  /* flex */
+
+  /* design */
+  background-color: lightgray;
+  margin: 10px;
+}
+
+.footer {
+  /* flex */
+
+  /* design */
+  background-color: #5876e9;
+  margin: 10px 0;
+  padding: 10px;
+  width: 98%;
+}
+
+.section-title {
+  font-size: 22px;
+  font-weight: 100;
+}
+
+.items-wrapper {
+  /* flex */
+  display: flex;
+  flex-direction: column;
+}
+
+.section-item {
+  /* design */
+  border-bottom: 1px solid gray;
+  font-family: "Courier New", Courier, monospace;
+  margin: 10px;
+  padding: 5px;
+}
+
+.squares-wrapper {
+  /* flex */
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.square {
+  /* design */
+  background-color: white;
+  height: 200px;
+  margin: 3px;
+  width: 200px;
+}
+```
+
+2. In the CSS file, revise the styles for screen sizes above 320px:  
+
+```css
+@media only screen and (min-width: 320px) {
+  /*your CSS Rules*/
+  .navbar-logo {
+    background-color: aliceblue;
+    color: black;
+  }
+
+  .items-wrapper {
+    /* flex */
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    /* design */
+    font-size: 20px;
+  }
+
+  .squares-wrapper {
+    /* flex */
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: start;
+  }
+
+  .square {
+    /* design */
+    height: 50px;
+    width: 50px;
+  }
+}
+```
+
+3. In the CSS file, revise the styles for screen sizes above 640px: 
+
+```css
+@media only screen and (min-width: 640px) {
+  /*your CSS Rules*/
+  .navbar {
+    align-items: flex-end;
+    display: flex;
+  }
+
+  .navbar-item {
+    display: block;
+  }
+
+  .navbar-logo {
+    display: none;
+  }
+
+  .sidebar {
+    /* display */
+    display: flex;
+    flex-direction: column;
+
+    /* design */
+    background-color: white;
+    border-right: 1px solid #5876e9;
+    border-top: 1px solid #5876e9;
+    margin: 0 10px 0 0;
+    padding: 5px;
+    width: 180px;
+  }
+
+  .sidebar-item {
+    font-size: 24px;
+    margin: 20px 0;
+    padding: 5px;
+  }
+
+  .section-subwrapper {
+    /* flex */
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  .section-one {
+    /* design */
+    margin: 10px 5px 10px 10px;
+  }
+
+  .section-two {
+    /* design */
+    margin: 10px 10px 10px 5px;
+  }
+
+  .items-wrapper {
+    /* flex */
+    flex-direction: column;
+
+    /* design */
+    font-size: 24px;
+  }
+  .squares-wrapper {
+    /* flex */
+    flex-wrap: wrap;
+    justify-content: end;
+  }
+
+  .square {
+    /* design */
+    height: 110px;
+    width: 110px;
+  }
+}
+```
+
+4. In the CSS file, revise the styles for screen sizes above 960px: 
+
+```css
+@media only screen and (min-width: 960px) {
+  /*your CSS Rules*/
+  .sidebar-item {
+    font-size: 30px;
+    margin: 30px 0;
+    padding: 5px;
+  }
+
+  .section {
+    width: 100%;
+  }
+
+  .squares-wrapper {
+    /* flex */
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .square {
+    /* design */
+    height: 140px;
+    width: 140px;
+  }
+}
+```
+
 ## Additional Resources
    
 ### HTML and CSS
