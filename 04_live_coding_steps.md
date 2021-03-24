@@ -701,6 +701,48 @@ body {
 }
 ```
 
+9. In the CSS file, revise the `rocket` class to add values for `opacity` and `transform`.
+
+```css
+.rocket {
+  /* position */
+  position: absolute;
+  top: 65px;
+  transform: translate(100%, -70%);
+
+  /* design */
+  font-size: 48px;
+  opacity: 0;
+  width: 100%;
+  z-index: 10;
+
+  /* animation */
+  animation: takeoff 7s ease-in 0s, hide-rocket 1s ease-out 7s;
+}
+```
+
+10. In the CSS file, revise the `takeoff` keyframe to add a change in `opacity`.  
+
+```css
+@keyframes takeoff {
+  0% {
+    -moz-transform: translate(0%, 0%);
+    -webkit-transform: translate(0%, 0%);
+    display: block;
+    opacity: 1;
+    transform: translate(0%, 0%);
+  }
+  100% {
+    font-size: 24px;
+    -moz-transform: translate(100%, 30%);
+    -webkit-transform: translate(100%, 30%);
+    opacity: 0;
+    transform: translate(100%, -70%);
+  }
+}
+```
+
+
 ## Additional Resources  
    
 ### HTML and CSS
