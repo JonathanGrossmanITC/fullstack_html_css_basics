@@ -2,6 +2,10 @@
 
 ## Day 1
 
+The focus of this live coding session is to create a project folder, design the mobile layout and styles, and add media queries to handle some of the styles for larger screen sizes. By the end of this session, the page should look fairly good but have some imperfections. For instance, the title is not propertly aligned, the footer layout is awkward in larger screen sizes, and more. In the next live coding session, you will implement styles in your media questions that address those imperfections.  
+
+Live Coding Steps:  
+
 1. Create a project folder for HTML and CSS  
   
 2. In the HTML file, create the HTML structure for your page:  
@@ -240,6 +244,12 @@
   }
 }
 ```
+
+## Day 2
+
+The focus of this live coding session is to use Flexbox to improve the responsive layout and design of the page. By the end of this session, most of the imperfections should be eliminated.     
+
+Live Coding Steps:  
 
 ## Additional Resources
    
