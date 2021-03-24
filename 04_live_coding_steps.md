@@ -667,7 +667,7 @@ body {
 7. In the CSS file, above the `rocket` class, add a `@keyframe` definition for the animation.  
 
 ```css
-@keyframes scroll-right {
+@keyframes takeoff {
   0% {
     -moz-transform: translate(0%, 0%);
     -webkit-transform: translate(0%, 0%);
@@ -697,7 +697,7 @@ body {
   z-index: 10;
 
   /* animation */
-  animation: scroll-right 7s ease-in 0s;
+  animation: takeoff 7s ease-in 0s;
 }
 ```
 
