@@ -24,7 +24,7 @@ HTML and CSS are languages that instruct the browser how to display the contents
 ### A web page is a document
 You're probably familiar with working in a Word Doc, Google Doc, Notepad, and .txt files. Similar to those, an HTML file is just a document for storing information. Try this. Make a file on your desktop called `document.html`. Open it and write the sentence "This is just a document". Save the file. Open a browser and drag your `document.html` file to the browser. What do you see in the browser?  
 
-Pretty cool, but wouldn't it be better if you could add some style to the text? You could change its color, position, size, and more. Using HTML and CSS syntax, you can tell the browser how to do those things. That's one of the things that makes HTML and CSS so special is that browsers know how to interpret those kinds of files and display them to the user.  
+Pretty cool, but wouldn't it be better if you could add some style to the text? You could change its color, position, size, and more. Using HTML and CSS syntax, you can tell the browser how to do those things. One of the things that makes HTML and CSS so special is that browsers know how to interpret those kinds of files and display them to the user.  
 
 In this section, you'll learn about HTML tag syntax. This is a special syntax you need to use so that the browser knows what to do. Before studying the tag syntax, first, you'll see an example of how to structure an HTML page. In order to maximize the use of an HTML file, you need to know how to structure one. Then, you'll study some different tag types and how they work.   
 
