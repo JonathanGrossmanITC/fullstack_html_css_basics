@@ -22,7 +22,7 @@ By the end of this lesson, you will have:
 HTML and CSS are languages that instruct the browser how to display the contents on the page. HTML defines the **elements** of the page. The elements of the page consist of text, images, videos, content blocks, and more. HTML and CSS together define the **layout** and **style** of the elements. The layout is how the elements are organized on the page. The element styles include the size, spacing, color, font, and more.  
 
 ### A web page is a document
-You're probably familiar with working in a Word Doc, Google Doc, Notepad, and .txt files. Similar to those, and HTML file is just a document for storing information. Try this. Make a file on your desktop called `document.html`. Open it and write the sentence "This is just a document". Save the file. Open a browser and drag your `document.html` file to the browser. What do you see in the browser?  
+You're probably familiar with working in a Word Doc, Google Doc, Notepad, and .txt files. Similar to those, an HTML file is just a document for storing information. Try this. Make a file on your desktop called `document.html`. Open it and write the sentence "This is just a document". Save the file. Open a browser and drag your `document.html` file to the browser. What do you see in the browser?  
 
 Pretty cool, but wouldn't it be better if you could add some style to the text? You could change its color, position, size, and more. Using HTML and CSS syntax, you can tell the browser how to do those things. That's one of the things that makes HTML and CSS so special is that browsers know how to interpret those kinds of files and display them to the user.  
 
