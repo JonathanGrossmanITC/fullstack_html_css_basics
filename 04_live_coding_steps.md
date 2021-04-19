@@ -9,7 +9,7 @@ Hopefully some extra time permits so that the class can do some improv live codi
 After these sessions, you will have:  
 - Refreshed basic HTML and CSS topics  
 - Focused on several key concepts for layout and design  
-- Seen how one developer's process for writing HTML and CSS to build a responsive landing page  
+- Seen one developer's process for writing HTML and CSS to build a responsive landing page  
 
 ## Day 1
 
