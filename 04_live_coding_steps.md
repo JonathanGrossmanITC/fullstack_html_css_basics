@@ -13,7 +13,7 @@ After these sessions, you will have:
 
 ## Day 1
 
-The focus of this live coding session is to create a project folder, design the mobile layout and styles, and add media queries to handle some of the styles for larger screen sizes. By the end of this session, the page should look fairly good but have some imperfections. For instance, the title is not propertly aligned, the footer layout is awkward in larger screen sizes, and more. In the next live coding session, you will implement styles in your media questions that address those imperfections.  
+The focus of this live coding session is to create a project folder, design the mobile layout and styles, and add media queries to handle some of the styles for larger screen sizes. By the end of this session, the page should look fairly good but have some imperfections. For instance, the title is not properly aligned, the footer layout is awkward in larger screen sizes, and more. In the next live coding session, you will implement styles in your media queries that address those imperfections.  
 
 Live Coding Steps:  
 
@@ -28,7 +28,7 @@ Live Coding Steps:
   -- In the title wrapper, add an `h1` tag (`class="title"`) with text for the title.  
   -- In the section subwrapper, add two `div` elements. One is for section one (`class="section section-one"`) and the other is for section two (`class="section section-two"`).  
   -- In sections one and two, add an `h1` tag (`class="section-title"`) with text for a title and also add a `div` to wrap items (`class="items-wrapper"`).  
-  -- In the `div` elements that wraps the items, add five or six `div` elements (`class="section-item"`) and text for each item.  
+  -- In the `div` element that wraps the items, add five or six `div` elements (`class="section-item"`) and text for each item.  
   -- In the footer, add an `h1` tag (`class="title"`) with text for a title and also add a `div` element (`class="squares-wrapper"`) to wrap some squares.  
   -- In the `div` for wrapping squares, add eight `div` elements (`class="square"`), each of which will be in the shape of a square.  
   
